@@ -1,0 +1,1122 @@
+[
+	{
+		"Name":"19thCenturyBritishNovel",
+		"Description":"Enter your chat conversation with a 19thCenturyBritishNovel identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/786bed01-3eae-4ce7-a692-b80cca2c0059\/"
+	},
+	{
+		"Name":"AbstractConvert",
+		"Description":"Convert text into an abstract with the AbstractConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/17bcf2ec-24ac-42b8-9761-fe345de8cdb6\/"
+	},
+	{
+		"Name":"AbstractStyled",
+		"Description":"Get responses in the style of an academic abstract with the AbstractStyled chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0d20c289-e05d-4e0f-ae22-ec1b7e91c9a6\/"
+	},
+	{
+		"Name":"ActiveVoiceRephrase",
+		"Description":"Rephrase text from passive into active voice with the ActiveVoiceRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0b66a417-c480-4245-8d6e-add0901d7276\/"
+	},
+	{
+		"Name":"AddDetails",
+		"Description":"Fill in the details with the AddDetails function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/11309a7e-36e4-447e-b82a-da93bc78467c\/"
+	},
+	{
+		"Name":"AlternativeHistorian",
+		"Description":"Enter your chat conversation with a AlternativeHistorian identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3a5cc3ff-fc7e-40c5-9cce-07d1be8a2f33\/"
+	},
+	{
+		"Name":"AlwaysAQuestion",
+		"Description":"Modify output to always be inquisitive with the AlwaysAQuestion chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f215b02a-c1e9-443a-be30-15e6f7d36114\/"
+	},
+	{
+		"Name":"AlwaysARiddle",
+		"Description":"Riddle me this, riddle me that with the AlwaysARiddle chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/818da9dd-04cd-4d1d-b8ef-85af1cf6d2e7\/"
+	},
+	{
+		"Name":"AnimalSpeak",
+		"Description":"Enter your chat conversation with a AnimalSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9421fb42-ab27-489a-9a41-587b53c46d40\/"
+	},
+	{
+		"Name":"Anonymize",
+		"Description":"Replace personally identifiable information in text with placeholders with the Anonymize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c58870ff-3038-4210-bd6a-60cae653c031\/"
+	},
+	{
+		"Name":"AphorismConvert",
+		"Description":"Create a concise statement that presents a moral or philosophical idea based on the provided text with the AphorismConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/03a75309-2578-49f9-b947-2689a07f207a\/"
+	},
+	{
+		"Name":"AphorismStyled",
+		"Description":"Write the response as an aphorism with the AphorismStyled chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/dca09b27-cb05-4cac-a3e0-91a6b18e983d\/"
+	},
+	{
+		"Name":"ArguePOV",
+		"Description":"Enter your chat conversation with a ArguePOV identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e9d765a2-27fc-4185-a3d2-bc82a99a5665\/"
+	},
+	{
+		"Name":"BadGrammar",
+		"Description":"Provide answers using incorrect grammar with the BadGrammar chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b4dc10ba-bf8b-4088-a589-440fadf4d467\/"
+	},
+	{
+		"Name":"Birdnardo",
+		"Description":"Enter your chat conversation with a Birdnardo identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/399cfdee-1028-490d-aedf-0925e83b0bfa\/"
+	},
+	{
+		"Name":"BizDejargonize",
+		"Description":"Rewrite text to remove business jargon with the BizDejargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a699664a-96c4-4d40-b941-eb9d5cf9613e\/"
+	},
+	{
+		"Name":"BizJargonize",
+		"Description":"Rewrite text to incorporate more business jargon with the BizJargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/32fe894d-9cb0-49c7-89e7-45c0ecaebbad\/"
+	},
+	{
+		"Name":"BreakGrammar",
+		"Description":"Put grammatical errors into a piece of text with the BreakGrammar function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/775030cb-76a1-41ad-8a79-7622c80bf8c1\/"
+	},
+	{
+		"Name":"BudgetingBot",
+		"Description":"Enter your chat conversation with a BudgetingBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5aced965-0ba8-406b-92f4-8a66f040d34f\/"
+	},
+	{
+		"Name":"CallToActionSuggest",
+		"Description":"Generate a catchy CTA to grab the attention of your audience with the CallToActionSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/905e5e50-64af-4e9b-9a64-54508a4083ff\/"
+	},
+	{
+		"Name":"CarnivalBarker",
+		"Description":"Enter your chat conversation with a CarnivalBarker identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a1759f10-d905-4e4a-a81b-d8136577cd4b\/"
+	},
+	{
+		"Name":"CasualRephrase",
+		"Description":"Rephrase provided text to be more casual with the CasualRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/59657c94-5e3e-4f8b-9ff6-5c1089675283\/"
+	},
+	{
+		"Name":"CharacterList",
+		"Description":"Create a list of characters from a block of text with the CharacterList function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2d922181-8d26-4738-bf7d-3d7e2db2bb16\/"
+	},
+	{
+		"Name":"Cheerleader",
+		"Description":"Enter your chat conversation with a Cheerleader identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a000928a-e492-4a81-b290-814607777b9e\/"
+	},
+	{
+		"Name":"ClickbaitOptimized",
+		"Description":"Modify text to sound like clickbait with the ClickbaitOptimized chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5ff494ed-80d8-4774-87af-6cae55022290\/"
+	},
+	{
+		"Name":"ClickBaitTitle",
+		"Description":"Rewrite text as a clickbait style headline with the ClickBaitTitle function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c343514b-9a86-4c8e-abe7-c7f324b35626\/"
+	},
+	{
+		"Name":"CodeCommentInsert",
+		"Description":"Add comments to code with the CodeCommentInsert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/13fcbce2-1d64-4cdb-b4b8-6736d602dd5e\/"
+	},
+	{
+		"Name":"CodeImport",
+		"Description":"Import code from other languages to Wolfram Language with the CodeImport function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b7805f1e-5ddb-4e6b-9dff-c8f020742914\/"
+	},
+	{
+		"Name":"CodeReformat",
+		"Description":"Reformat code so that is more human readable with the CodeReformat function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e6855226-f130-4619-ae09-d5821e6668c9\/"
+	},
+	{
+		"Name":"CodeWriter",
+		"Description":"Enter your chat conversation with a CodeWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0894a02f-2aa5-4d4e-8289-fb1121164545\/"
+	},
+	{
+		"Name":"ComicBookWriter",
+		"Description":"Enter your chat conversation with a ComicBookWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b98c05e2-adf6-4d63-a41b-b894bd367142\/"
+	},
+	{
+		"Name":"CommentSuggest",
+		"Description":"Suggest a comment to describe a given block of code with the CommentSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/70cc65bf-5f54-4cb7-bb9c-af1764f6a2c7\/"
+	},
+	{
+		"Name":"CompanyNameSuggest",
+		"Description":"Suggest a company name with the CompanyNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2ed087a5-4f2c-46f9-b3d3-5bd124f8122b\/"
+	},
+	{
+		"Name":"CompleteSentence",
+		"Description":"Answer a question in one complete sentence with the CompleteSentence chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d900f352-0e75-4132-95cb-ec0e00dc2f13\/"
+	},
+	{
+		"Name":"ComplexWordsPreferred",
+		"Description":"Modify text to use more complex words with the ComplexWordsPreferred chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/86175b37-e24b-48d1-8b68-370181e6bbd3\/"
+	},
+	{
+		"Name":"ConceptNameSuggest",
+		"Description":"Suggest a name for a possible concept with the ConceptNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b7db075e-73d1-46d0-9a91-0de110a3049b\/"
+	},
+	{
+		"Name":"CopyEdit",
+		"Description":"Edit text for grammar, spelling, punctuation and clarity with the CopyEdit function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a6af31ca-e14a-4853-ac37-7ed6c22dbf10\/"
+	},
+	{
+		"Name":"CoverLetterSuggest",
+		"Description":"Create a cover letter from job description text with the CoverLetterSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/fdb7c4de-d71f-4338-8f95-06ab57d54d24\/"
+	},
+	{
+		"Name":"CSV",
+		"Description":"Convert text to a comma-separated-value formatted table with the CSV chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c9ef336f-2011-4e55-a0b7-c2f99d86d320\/"
+	},
+	{
+		"Name":"CutiePie",
+		"Description":"Enter your chat conversation with a CutiePie identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/29dbc27c-f170-433a-9d65-335675062a35\/"
+	},
+	{
+		"Name":"CodeDocAnnotator",
+		"Description":"Generate markup documentation annotations with the CodeDocAnnotator function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/22642b00-98ec-4df6-9713-a6e5f0ebdd8e\/"
+	},
+	{
+		"Name":"DatasetForm",
+		"Description":"Convert text to a Wolfram Language Dataset with the DatasetForm chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/881db060-1336-4055-8b11-eaa153993f6d\/"
+	},
+	{
+		"Name":"DeduplicateText",
+		"Description":"Remove duplicate words and phrases with the DeduplicateText function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4c22b715-0611-4bdb-91bf-c73b445c0b1f\/"
+	},
+	{
+		"Name":"DefineAntonyms",
+		"Description":"Gives antonyms for words and words with an opposite meaning with the DefineAntonyms function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e6dcc8af-07e0-4ab2-b1ab-d268f2c97fce\/"
+	},
+	{
+		"Name":"DesignThinker",
+		"Description":"Enter your chat conversation with a DesignThinker identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/30454f71-1182-4c67-b604-54312081db9b\/"
+	},
+	{
+		"Name":"Disclaimered",
+		"Description":"Modify responses in the form of a disclaimer with the Disclaimered chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/77bfc1f0-1062-4036-9b37-87fb0bb7e76a\/"
+	},
+	{
+		"Name":"Disclaimerize",
+		"Description":"Add disclaimer language to text with the Disclaimerize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b177d7d6-a14c-4d38-8f54-aeb09816dc80\/"
+	},
+	{
+		"Name":"DocumentCompare",
+		"Description":"Compare two documents with the DocumentCompare function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9dfc22ed-3737-4e0b-8d71-db60d4175daf\/"
+	},
+	{
+		"Name":"DocumentReader",
+		"Description":"Enter your chat conversation with a DocumentReader identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/7ed7ae84-21f5-4755-ab59-e4c11078227c\/"
+	},
+	{
+		"Name":"DomainSuggest",
+		"Description":"Generate a website domain name based on a description with the DomainSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3537ab70-b773-4dfb-9425-4c61eae7e020\/"
+	},
+	{
+		"Name":"DrillSergeant",
+		"Description":"Enter your chat conversation with a DrillSergeant identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d28eccbe-eec8-48fc-8f21-e0e2c7978efa\/"
+	},
+	{
+		"Name":"DSolveFromText",
+		"Description":"Convert text describing a differential equation to a DSolve expression with the DSolveFromText function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/59e82f22-57b8-44d8-be16-6735fa28b3d6\/"
+	},
+	{
+		"Name":"DystopianWriter",
+		"Description":"Enter your chat conversation with a DystopianWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/68546be9-d79d-4d01-b38a-16fb778c0346\/"
+	},
+	{
+		"Name":"ElevatorPitch",
+		"Description":"Write the response as an elevator pitch with the ElevatorPitch chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5f7c3278-be41-4733-a2b2-9570ac44180b\/"
+	},
+	{
+		"Name":"ELI5",
+		"Description":"Explain like I'm five with the ELI5 chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f65362e2-3971-4cd7-b0bb-cc795bd74ef7\/"
+	},
+	{
+		"Name":"ElizaBot",
+		"Description":"Enter your chat conversation with a ElizaBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a15411ed-ec86-4ee5-b51e-74b9d4b38286\/"
+	},
+	{
+		"Name":"Emojified",
+		"Description":"Provide responses that include emojis within the text with the Emojified chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4504eda5-bd77-4db8-810c-5b7aeba53649\/"
+	},
+	{
+		"Name":"Emojify",
+		"Description":"Replace key words in text with emojis with the Emojify function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/154fd9f7-87b6-4e58-9ba2-1c4bcb1f6b2c\/"
+	},
+	{
+		"Name":"EmojiTranslate",
+		"Description":"Translate text into an emoji representation with the EmojiTranslate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/6283a682-2755-485c-aa3b-189f1967d346\/"
+	},
+	{
+		"Name":"EmojiTranslated",
+		"Description":"Get a response translated to emoji with the EmojiTranslated chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/8b640288-2f98-4149-83a5-e267119b4f5a\/"
+	},
+	{
+		"Name":"EntertainerBot",
+		"Description":"Enter your chat conversation with a EntertainerBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/88e4079e-39b4-4489-b329-d2b78de24f30\/"
+	},
+	{
+		"Name":"ExportingNations",
+		"Description":"Find a list of countries known for a certain export with the ExportingNations function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/16a06ffe-49bc-4b31-84ec-2ac08dc10483\/"
+	},
+	{
+		"Name":"FacebookConvert",
+		"Description":"Rewrite text in the style of a Facebook post with the FacebookConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/ca1f43ea-af9d-420c-bb89-596a178c0f8c\/"
+	},
+	{
+		"Name":"FantasyWriter",
+		"Description":"Enter your chat conversation with a FantasyWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/bf1bf17a-9dba-4061-8d97-d2b1973f54f5\/"
+	},
+	{
+		"Name":"Fictionalize",
+		"Description":"Replace personally identifiable information in text with fictionalized versions with the Fictionalize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/698cf1a6-e4d5-4432-bcf6-84cbce99e991\/"
+	},
+	{
+		"Name":"FictionalNameSuggest",
+		"Description":"Suggest a name from a genre or work of fiction with the FictionalNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c7138cab-1259-44b0-ac00-8ec4ccda704f\/"
+	},
+	{
+		"Name":"FilenameSuggest",
+		"Description":"Write an easy filename to use with the FilenameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/7b1054bb-d50c-4880-a28c-a0661a6ad133\/"
+	},
+	{
+		"Name":"Formal",
+		"Description":"Rewrite text to sound more formal with the Formal chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/61a45ca4-61b8-458f-a03c-63e5295f3ee7\/"
+	},
+	{
+		"Name":"FormalRephrase",
+		"Description":"Rephrase text in a formal way with the FormalRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3267d0da-be00-486d-9523-452fbfdb8cc9\/"
+	},
+	{
+		"Name":"FTFY",
+		"Description":"Use Fixed That For You to quickly correct spelling and grammar mistakes with the FTFY function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2c6e4f53-7751-4db9-86d2-3a45e767855a\/"
+	},
+	{
+		"Name":"FunctionNameSuggest",
+		"Description":"Suggest an alternative name for a given function with the FunctionNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0138b7f4-1226-4362-ab92-92466129af10\/"
+	},
+	{
+		"Name":"GenerateRPGScenario",
+		"Description":"Create a one-shot scenario for an RPG with the GenerateRPGScenario function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/85513689-16cc-43c0-8ff1-2fbc3e5c752c\/"
+	},
+	{
+		"Name":"GenZSpeak",
+		"Description":"Enter your chat conversation with a GenZSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a097365e-e0c6-4b2c-aa46-04ecb3922511\/"
+	},
+	{
+		"Name":"GlossaryGenerate",
+		"Description":"Generate a glossary for a given piece of text with the GlossaryGenerate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/6a373484-2325-49c6-887b-08879ee0c9d1\/"
+	},
+	{
+		"Name":"GonzoWriter",
+		"Description":"Enter your chat conversation with a GonzoWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/6b04bdb2-ea4a-41d8-9c9c-b15504d6040e\/"
+	},
+	{
+		"Name":"GothicWriter",
+		"Description":"Enter your chat conversation with a GothicWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/eb19f9b0-c0be-4f47-b963-169a64faa56a\/"
+	},
+	{
+		"Name":"GradeEssay",
+		"Description":"Get a mock grade for submitted essay with the GradeEssay function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/216a2e2e-4256-4050-b474-63794eb241a6\/"
+	},
+	{
+		"Name":"GradeLevelEstimate",
+		"Description":"Estimate the grade level difficulty of a piece of text with the GradeLevelEstimate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/76153479-fa18-4972-ae6f-483c8cb58b84\/"
+	},
+	{
+		"Name":"GradeLevelRephrase",
+		"Description":"Rephrase text to be written at the specified grade level with the GradeLevelRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/eb134184-43d4-4af5-a4c7-d71ad0c73597\/"
+	},
+	{
+		"Name":"GradeLevelSuited",
+		"Description":"Respond with answers that the specified US grade level can understand with the GradeLevelSuited chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/88d81fc1-1dd3-43bc-82e1-069d68b74fa5\/"
+	},
+	{
+		"Name":"GrammarReport",
+		"Description":"Generate a list of grammatical errors in a given text with the GrammarReport function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a5cf1ff0-9b30-480a-8c92-572868e49dd7\/"
+	},
+	{
+		"Name":"Groot",
+		"Description":"Enter your chat conversation with a Groot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/384d9253-8781-4e4d-a1a9-beef3e4e62e6\/"
+	},
+	{
+		"Name":"HaikuStyled",
+		"Description":"Change responses to haiku form with the HaikuStyled chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d481c259-8fc4-41c4-ba42-d918ea7a8080\/"
+	},
+	{
+		"Name":"HaikuVersion",
+		"Description":"Summarize text as a haiku with the HaikuVersion function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3dcc7196-41f2-4836-a2d8-41ed562aae91\/"
+	},
+	{
+		"Name":"HandymanBot",
+		"Description":"Enter your chat conversation with a HandymanBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/1b26bc5a-7862-44e2-b012-a196224ac902\/"
+	},
+	{
+		"Name":"HarlequinWriter",
+		"Description":"Enter your chat conversation with a HarlequinWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/ef83a3c4-866f-4dce-aaed-1d252fec67c3\/"
+	},
+	{
+		"Name":"HeadlineSuggest",
+		"Description":"Suggest a headline for a text with the HeadlineSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4dc4a087-2293-4b21-ae70-cafb4f67c6cc\/"
+	},
+	{
+		"Name":"HistoricalRephrase",
+		"Description":"Rephrase text in the voice of a historical era with the HistoricalRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/1f349cd7-dc46-4976-99d2-27c9265fd346\/"
+	},
+	{
+		"Name":"HumanNetworkConnection",
+		"Description":"Find the connection between two people with the HumanNetworkConnection function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/582d52e3-c01a-460b-b10b-62af5c008888\/"
+	},
+	{
+		"Name":"HypeUp",
+		"Description":"Punch up a block of text with exciting, over-the-top wording with the HypeUp function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/7ae95fdf-963c-4c6a-9ecd-c4216df775bb\/"
+	},
+	{
+		"Name":"IndexTermsSuggest",
+		"Description":"Generate index terms based on the text provided with the IndexTermsSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3580cd33-33ac-4744-a981-de3d5026dd9c\/"
+	},
+	{
+		"Name":"Informal",
+		"Description":"Write an informal invitation to an event with the Informal chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f70ad136-6f3e-4346-bbb1-653e10d0801b\/"
+	},
+	{
+		"Name":"InformalRephrase",
+		"Description":"Rephrase text in an informal way with the InformalRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e5d40343-41f3-45a0-89a7-f160e37de525\/"
+	},
+	{
+		"Name":"InstagramConvert",
+		"Description":"Rewrite text in the style of an Instagram post with the InstagramConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5bad2933-1d97-413e-a662-d1d91088b384\/"
+	},
+	{
+		"Name":"Interrogator",
+		"Description":"Enter your chat conversation with a Interrogator identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e5dab868-f7ff-440c-9d03-79dca02b7536\/"
+	},
+	{
+		"Name":"InvitationGenerate",
+		"Description":"Generate an invitation to an event from a description with the InvitationGenerate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/66409359-99e1-4a20-9eed-25222e626c7e\/"
+	},
+	{
+		"Name":"IPA",
+		"Description":"Convert text into phonetic form based on the International Phonetic Alphabet with the IPA function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4c7f42cc-b8ee-4f5e-a826-02ad160a24b9\/"
+	},
+	{
+		"Name":"Jester",
+		"Description":"Enter your chat conversation with a Jester identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/488ab890-ccc9-44f2-a6c1-f2b329996068\/"
+	},
+	{
+		"Name":"JokeSuggest",
+		"Description":"Create a joke about based on a list of subjects with the JokeSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/618c03e2-d0e1-480a-9dee-d130f64232ca\/"
+	},
+	{
+		"Name":"JSON",
+		"Description":"Respond with JavaScript Object Notation format with the JSON chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/fb589b41-f6a0-49a1-970f-68dcfe957e17\/"
+	},
+	{
+		"Name":"KnowAboutMe",
+		"Description":"Give the LLM an FYI with the KnowAboutMe chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/60d384f9-7a8d-4100-9303-3203a5c89072\/"
+	},
+	{
+		"Name":"LegalDejargonize",
+		"Description":"Rewrite text removing legal jargon with the LegalDejargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0332ced5-62f7-455a-9364-abacd8356aee\/"
+	},
+	{
+		"Name":"LegalJargonize",
+		"Description":"Rewrite text using legal jargon with the LegalJargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/18cd4b50-f35f-4bef-9a72-e3ec8da6314f\/"
+	},
+	{
+		"Name":"LegalJargonized",
+		"Description":"Provide answers using legal jargon with the LegalJargonized chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/fe7326c0-a2ba-4829-9ba9-5a77ef56656c\/"
+	},
+	{
+		"Name":"LimerickStyled",
+		"Description":"Receive answers in the form of a limerick with the LimerickStyled chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b00f6ec1-fcb6-404b-8de7-e7e96be01810\/"
+	},
+	{
+		"Name":"LimerickVersion",
+		"Description":"Summarize text as a limerick with the LimerickVersion function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4c0bf2d4-d42a-4b7d-be64-d557123fcfa8\/"
+	},
+	{
+		"Name":"LinkedInConvert",
+		"Description":"Rewrite text in the style of a LinkedIn post with the LinkedInConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/662b51f1-7239-4f33-93ca-db5a1c3ac719\/"
+	},
+	{
+		"Name":"LinkSuggest",
+		"Description":"Suggest links that could be added to a piece of text with the LinkSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2834ff08-cd96-4a47-8eaa-96229067edff\/"
+	},
+	{
+		"Name":"LLMPromptAssessment",
+		"Description":"Use an LLM to assess the quality of another LLM's response for a given prompt with the LLMPromptAssessment function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/32ee1a0b-777b-4e92-9b13-aae77ca7ee29\/"
+	},
+	{
+		"Name":"LOCTopicSuggest",
+		"Description":"Suggest a Library of Congress topic classification for the subject matter of a piece of text with the LOCTopicSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/75c8aec9-7ba2-4f95-ac89-7f6dc1a6e9d4\/"
+	},
+	{
+		"Name":"LongerRephrase",
+		"Description":"Rephrase the text in a longer way with the LongerRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2491f0a4-6ebd-4cc8-ae56-2080b7af63b9\/"
+	},
+	{
+		"Name":"LyricsSuggest",
+		"Description":"Create songs with given topics or texts based on a particular style with the LyricsSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/37c1959d-c3b8-4839-b0eb-e449fbe64025\/"
+	},
+	{
+		"Name":"MadHatter",
+		"Description":"Enter your chat conversation with a MadHatter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/dd70e199-48a9-420b-8046-c0558b34bb2d\/"
+	},
+	{
+		"Name":"MaggieEightball",
+		"Description":"Enter your chat conversation with a MaggieEightball identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/07aec240-cb4a-4a2a-bf37-4f2230b78796\/"
+	},
+	{
+		"Name":"MarketingDejargonize",
+		"Description":"Rewrite by removing Marketing Jargon with the MarketingDejargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e0cc1bdb-dae7-4907-8554-5bb49f521d61\/"
+	},
+	{
+		"Name":"MarketingJargonize",
+		"Description":"Rewrite text in market-speak with the MarketingJargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/49944d8e-60f6-462e-a996-1afda3df3d3d\/"
+	},
+	{
+		"Name":"MarketingJargonized",
+		"Description":"Transforms replies to marketing with the MarketingJargonized chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f047df9b-c7b7-407d-9908-fa7d1c096d14\/"
+	},
+	{
+		"Name":"MedicalDejargonize",
+		"Description":"Translate medical jargon into non-technical terms with the MedicalDejargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9b4e90e9-ce2a-474d-ab80-d87aa4c85379\/"
+	},
+	{
+		"Name":"MedicalJargonize",
+		"Description":"Translate everyday language into medical jargon with the MedicalJargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4bfa1774-17f7-4eaf-b27d-2afc30494b9d\/"
+	},
+	{
+		"Name":"MedicalJargonized",
+		"Description":"Transform replies into medial jargon with the MedicalJargonized chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/010846ee-bbbf-4e15-b7a9-110929564f1b\/"
+	},
+	{
+		"Name":"Memeify",
+		"Description":"Convert text into meme-worthy material with the Memeify function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a4ec1b43-5c0e-426f-a202-3789b0f7b5c5\/"
+	},
+	{
+		"Name":"MermaidDiagram",
+		"Description":"Mermaid-JS diagrams code generator with the MermaidDiagram function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/25d71abd-acfd-4f96-886a-0ba726ac2012\/"
+	},
+	{
+		"Name":"MockInterviewer",
+		"Description":"Enter your chat conversation with a MockInterviewer identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/04d8471f-1aed-4be6-9c77-0d847629ecc2\/"
+	},
+	{
+		"Name":"Modernize",
+		"Description":"Rephrase text to modernize it with the Modernize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/bcc630bc-e419-4a22-947e-c014c8689cfb\/"
+	},
+	{
+		"Name":"MontyPython",
+		"Description":"Enter your chat conversation with a MontyPython identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9af7b9e2-e472-4218-a3c2-3fc2ff9d028b\/"
+	},
+	{
+		"Name":"Moodified",
+		"Description":"Modify an answer to express a certain mood with the Moodified chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/785f4fea-e404-4d02-be58-c8e274ab6f04\/"
+	},
+	{
+		"Name":"Moodify",
+		"Description":"Rewrite text with a specific mood with the Moodify function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a7962ae1-6a81-48a5-86cd-f5bca9007e32\/"
+	},
+	{
+		"Name":"MovieSuggest",
+		"Description":"List movies matching a description with the MovieSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/03e3188f-b705-49bf-bc72-a4f602a2e206\/"
+	},
+	{
+		"Name":"NarrativeToResume",
+		"Description":"Rewrite narrative text as a resume with the NarrativeToResume function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9d441dee-4bec-4212-9bf1-4a86e00f8195\/"
+	},
+	{
+		"Name":"NarrativeToScript",
+		"Description":"Rewrite a block of prose as a screenplay or stage play with the NarrativeToScript function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5de1b366-f2de-4098-986c-f17980777a2f\/"
+	},
+	{
+		"Name":"NerdSpeak",
+		"Description":"Enter your chat conversation with a NerdSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/16ea915e-63f8-42df-b09b-ec612b150a95\/"
+	},
+	{
+		"Name":"NothingElse",
+		"Description":"Give output in specified form, no other additions with the NothingElse chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0fc91c2a-6e66-4f81-9e12-2e2968cb76cf\/"
+	},
+	{
+		"Name":"NumericOnly",
+		"Description":"Modify results to give numerical responses only with the NumericOnly chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/532ba93f-907c-4d56-a399-64ce1c210d6f\/"
+	},
+	{
+		"Name":"NutritionistBot",
+		"Description":"Enter your chat conversation with a NutritionistBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/951371c6-339b-4684-a44f-8b51f7d41441\/"
+	},
+	{
+		"Name":"OldTimeGangsterSpeak",
+		"Description":"Enter your chat conversation with a OldTimeGangsterSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/400b221b-301b-4147-b728-65f367ea5da2\/"
+	},
+	{
+		"Name":"OnlineAdConvert",
+		"Description":"Rewrite text to sound like an online ad with the OnlineAdConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/34a65204-5362-42e7-a1c6-9eab74cfd26a\/"
+	},
+	{
+		"Name":"OnlyWrongAnswers",
+		"Description":"Enter your chat conversation with a OnlyWrongAnswers identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c50bc69d-dbae-40c0-b413-f11e18b56a9a\/"
+	},
+	{
+		"Name":"OppositeDay",
+		"Description":"It's not opposite day today, so everything will work just the way you expect with the OppositeDay chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/fd560ffc-23cc-47b2-9d3d-fc2bd72c92dd\/"
+	},
+	{
+		"Name":"PaleoPersona",
+		"Description":"Enter your chat conversation with a PaleoPersona identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/dafc10ae-c1b6-4de8-97ef-dc8fe4802856\/"
+	},
+	{
+		"Name":"PassiveVoiceRephrase",
+		"Description":"Rephrase text from active into passive voice with the PassiveVoiceRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3c3828e5-bf80-4527-b9c8-aa6159bf39a9\/"
+	},
+	{
+		"Name":"PersonalGrowthBot",
+		"Description":"Enter your chat conversation with a PersonalGrowthBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/78b5a27d-4dee-4997-816d-37d969c23cf4\/"
+	},
+	{
+		"Name":"PersonalTrainerBot",
+		"Description":"Enter your chat conversation with a PersonalTrainerBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/213c1839-e1de-435d-acd0-a199003d8f85\/"
+	},
+	{
+		"Name":"PirateSpeak",
+		"Description":"Enter your chat conversation with a PirateSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/86ff1d46-6720-40b4-8855-376a16ebc5dc\/"
+	},
+	{
+		"Name":"Pitchified",
+		"Description":"Give output as a sales pitch with the Pitchified chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e7c6ce96-a553-408a-bd1b-0f1674eba2f1\/"
+	},
+	{
+		"Name":"Pitchify",
+		"Description":"Convert text into a pitch with the Pitchify function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d34ea390-486f-4658-9e3a-9eb7b81e0427\/"
+	},
+	{
+		"Name":"PlaylistSuggest",
+		"Description":"Playlist generation for any mood with the PlaylistSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/fa3bfe2b-8a78-4931-aa81-94a826fe65a5\/"
+	},
+	{
+		"Name":"PoemStyled",
+		"Description":"Receive answers as poetry with the PoemStyled chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a44c13f9-111d-4e00-b8b1-95c3dac617d8\/"
+	},
+	{
+		"Name":"PoemVersion",
+		"Description":"Rewrite text as a poem with the PoemVersion function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/7ee8bace-7019-433d-8b81-97657f47d86c\/"
+	},
+	{
+		"Name":"PostmodernWriter",
+		"Description":"Enter your chat conversation with a PostmodernWriter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/aa25119a-cbc0-4e5a-b772-237b10240b5e\/"
+	},
+	{
+		"Name":"POVSpeak",
+		"Description":"Try out the POVSpeak LLM prompt. Character perspective oriented response.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/90ceb764-b8c4-4b26-aa7b-9b7db20ef761\/"
+	},
+	{
+		"Name":"PresentTenseRephrase",
+		"Description":"Rewrite text into the present tense with the PresentTenseRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/435630a5-9739-49d9-b93b-a9b42a483548\/"
+	},
+	{
+		"Name":"ProductNameSuggest",
+		"Description":"Create a product name with the ProductNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/7f77feb1-1a41-4486-8260-1f2cd1c5302d\/"
+	},
+	{
+		"Name":"PromptImprove",
+		"Description":"Make prompts more easily read by LLMs with the PromptImprove function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2a8c7e89-0697-4cbd-8cf7-d9b61efb1fca\/"
+	},
+	{
+		"Name":"PunAbout",
+		"Description":"Generates a pun given a subject matter with the PunAbout function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d7137956-19f2-4e6c-8819-4a699b233cd8\/"
+	},
+	{
+		"Name":"QuestionAnswerAssess",
+		"Description":"Determine the correctness of an answer to a question with the QuestionAnswerAssess function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/697c7066-c691-4039-a1d2-07d664e2e1b0\/"
+	},
+	{
+		"Name":"QuestionAssessmentExplanation",
+		"Description":"Automatically create explanations for QuestionObject assessments with the QuestionAssessmentExplanation function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/6a546718-2748-4761-9bbd-c5f78a2ec5e6\/"
+	},
+	{
+		"Name":"QuizAbout",
+		"Description":"Create quiz questions based on a given text or topic with the QuizAbout function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f8a36c78-0f73-45a7-b640-b270544297a2\/"
+	},
+	{
+		"Name":"R2D2",
+		"Description":"Enter your chat conversation with a R2D2 identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5b3126b4-de3a-416b-af95-e8cbb18be9e5\/"
+	},
+	{
+		"Name":"RandomText",
+		"Description":"Let the LLM decide what to write in order to express its creative side with the RandomText function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d0c23548-504b-4829-9b53-ac6a11153db8\/"
+	},
+	{
+		"Name":"RecipeBot",
+		"Description":"Enter your chat conversation with a RecipeBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/17d443a3-0b5e-45df-aa04-33a2f5a01a7c\/"
+	},
+	{
+		"Name":"RecipeSuggest",
+		"Description":"Create a recipe while controlling ingredients and more with the RecipeSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/8f88e478-d926-428e-a787-849ee57a65a7\/"
+	},
+	{
+		"Name":"Rephrase",
+		"Description":"Rewrite text with the Rephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/81849332-ad3d-4f25-9c03-adf1124422a6\/"
+	},
+	{
+		"Name":"Reporter",
+		"Description":"Enter your chat conversation with a Reporter identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/39173d47-0791-48e5-9dba-8a1ac97f5a55\/"
+	},
+	{
+		"Name":"ResumeToNarrative",
+		"Description":"Rewrite a resume as narrative text with the ResumeToNarrative function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2d95fd78-aff8-4bd1-bd7b-bb95129118c7\/"
+	},
+	{
+		"Name":"Rick",
+		"Description":"Enter your chat conversation with a Rick identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/15437e80-92cc-4006-b516-7df9d2d4c531\/"
+	},
+	{
+		"Name":"ScienceEnthusiast",
+		"Description":"Enter your chat conversation with a ScienceEnthusiast identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/12bd86bc-59c6-45f0-b83a-0e1a2fd02a42\/"
+	},
+	{
+		"Name":"ScientificDejargonize",
+		"Description":"Translate scientific jargon to plain language with the ScientificDejargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/787cdfc9-3b75-4216-bb3d-7633ac792fb4\/"
+	},
+	{
+		"Name":"ScientificJargonize",
+		"Description":"Add scientific jargon to plain text with the ScientificJargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/01dd6aad-009a-4970-b9a7-fdb1c57b3706\/"
+	},
+	{
+		"Name":"ScientificJargonized",
+		"Description":"Give output written in scientific jargon with the ScientificJargonized chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/ac64a5ac-7058-4e73-9e42-1f68ffc138d4\/"
+	},
+	{
+		"Name":"ScriptToNarrative",
+		"Description":"Generate narrative text from a formatted screenplay or stage play with the ScriptToNarrative function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/51133e61-a1cf-4478-9edf-81fe0b4f9c52\/"
+	},
+	{
+		"Name":"SensitivityAnalyze",
+		"Description":"Review text for sensitive content with the SensitivityAnalyze function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0c4670d6-1624-415f-8d77-c821868b83e7\/"
+	},
+	{
+		"Name":"SentimentAnalyze",
+		"Description":"Analyze the sentiment across a text with the SentimentAnalyze function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/34967764-67bd-45cc-9a04-ad69303c6dd4\/"
+	},
+	{
+		"Name":"SEOMetaDescription",
+		"Description":"Generate an SEO Meta description from text or URL with the SEOMetaDescription function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/111ee9a7-92a1-4401-960f-7cce6184a657\/"
+	},
+	{
+		"Name":"SEOOptimize",
+		"Description":"Find the most searched SEO keywords within any given text with the SEOOptimize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/60ad3cd4-5370-47f1-a1f8-15ef251f09ec\/"
+	},
+	{
+		"Name":"SEOOptimized",
+		"Description":"Modify output to only give highly searched terms with the SEOOptimized chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9363190d-a8cd-4c87-a9a8-30f651d231e2\/"
+	},
+	{
+		"Name":"Setting",
+		"Description":"Modify an answer to establish a sense of place with the Setting chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/924ae5eb-19da-4398-b7e2-067a50f86401\/"
+	},
+	{
+		"Name":"SeussGoose",
+		"Description":"Enter your chat conversation with a SeussGoose identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/2ec1e55c-9e4f-4b2d-bf0c-b1ed7f8840ef\/"
+	},
+	{
+		"Name":"ShorterRephrase",
+		"Description":"Rephrase the text in a shorter way with the ShorterRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/31093e1c-26ab-4a1a-9002-ec924c7fd8a8\/"
+	},
+	{
+		"Name":"ShorterSentencesRephrase",
+		"Description":"Rephrase text with shorter sentences with the ShorterSentencesRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0ec7073a-749d-429f-af12-1cde4102845a\/"
+	},
+	{
+		"Name":"SimpleWordsPreferred",
+		"Description":"Provide responses with simple words with the SimpleWordsPreferred chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9cba8540-3105-436a-bb0f-1aa251cb8ceb\/"
+	},
+	{
+		"Name":"SlantReport",
+		"Description":"Detect the",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/3d4e714a-5fe1-4bb4-aa39-59ff4a4401e2\/"
+	},
+	{
+		"Name":"SlideDeck",
+		"Description":"Get responses as a slide presentation with the SlideDeck chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d674de2a-26e3-423b-bba3-efdc5723817b\/"
+	},
+	{
+		"Name":"SlideDeckConvert",
+		"Description":"Convert text to a form suitable for a slide deck with the SlideDeckConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/1cd4f211-31cf-4899-a503-aaea87775bc8\/"
+	},
+	{
+		"Name":"SloganGenerate",
+		"Description":"Create a motto for a company, product, campaign, or group with the SloganGenerate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/6f077365-7a00-48c3-b4cd-8fd9e741d409\/"
+	},
+	{
+		"Name":"SommelierBot",
+		"Description":"Enter your chat conversation with a SommelierBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b21e6abb-fc8c-4a93-80f8-23d5816e0622\/"
+	},
+	{
+		"Name":"SouthernBelleSpeak",
+		"Description":"Enter your chat conversation with a SouthernBelleSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/886c9d5c-15e3-4a97-9cb2-0d7c05dda803\/"
+	},
+	{
+		"Name":"SpeciesNameSuggest",
+		"Description":"Describe a fake animal, get a fake species name with the SpeciesNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a6ebc346-cbfc-46f3-87e5-64ff71e4df2d\/"
+	},
+	{
+		"Name":"Spock",
+		"Description":"Enter your chat conversation with a Spock identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/edf5a61e-8e6d-4838-9035-a9eb697daf67\/"
+	},
+	{
+		"Name":"SportsCoach",
+		"Description":"Enter your chat conversation with a SportsCoach identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/01e333c3-f0dc-4263-8c1c-6c89c4c36dc3\/"
+	},
+	{
+		"Name":"StandardizedTestVocabularyQuiz",
+		"Description":"Create a set of standardized test questions on vocabulary for a given test with the StandardizedTestVocabularyQuiz function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/afb9d8b3-450f-440c-87a3-49b2021597d2\/"
+	},
+	{
+		"Name":"Summarize",
+		"Description":"Summarize provided text with the Summarize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/9f226eb1-812e-4275-b2c7-866a7f9af99d\/"
+	},
+	{
+		"Name":"SummarizeContent",
+		"Description":"Summarize the contents of a file or URL with the SummarizeContent function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0e665432-c89e-425f-bfd2-ae43d273630f\/"
+	},
+	{
+		"Name":"SupportiveFriend",
+		"Description":"Enter your chat conversation with a SupportiveFriend identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a99aaca5-0f9e-46a6-92c2-8c2a866c878d\/"
+	},
+	{
+		"Name":"SurferDudeSpeak",
+		"Description":"Enter your chat conversation with a SurferDudeSpeak identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a221a0ea-ffbd-4569-a3a1-ce58e588ffa8\/"
+	},
+	{
+		"Name":"TaglineSuggest",
+		"Description":"Generate various tag lines given a piece of text with the TaglineSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f843f6c0-c14c-45e1-bad2-b0f274c35958\/"
+	},
+	{
+		"Name":"TargetAudience",
+		"Description":"Word your response for a target audience with the TargetAudience chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/88ad69f6-0fc4-48b5-b92c-ae7af7eb7a5e\/"
+	},
+	{
+		"Name":"TechDejargonize",
+		"Description":"Convert Tech Industry jargon into plain speak with the TechDejargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/5bf7cd10-ac62-4f17-be13-84ae59adadff\/"
+	},
+	{
+		"Name":"TechJargonize",
+		"Description":"Add Tech Industry jargon to standard text with the TechJargonize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e1118385-d40c-48de-b870-6e609ab65abf\/"
+	},
+	{
+		"Name":"TechSupportBot",
+		"Description":"Enter your chat conversation with a TechSupportBot identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/8fef47d5-d848-4f58-9379-a3f5a4f2aa9c\/"
+	},
+	{
+		"Name":"ThemeTableJSON",
+		"Description":"Tabulates in JSON themes found in text with the ThemeTableJSON function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/ba3763e1-3afd-4c20-9104-a3e65dd67085\/"
+	},
+	{
+		"Name":"Thesaurize",
+		"Description":"Gives synonyms for words with the Thesaurize function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/bed1f5a6-16a3-480e-91b7-2bb3fdd51dcd\/"
+	},
+	{
+		"Name":"ThinkingHatsFeedback",
+		"Description":"Feedback by wearing different idea hats with the ThinkingHatsFeedback function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/8ad7599e-f713-4959-97b8-eb101aed3d33\/"
+	},
+	{
+		"Name":"ThirdPersonRephrase",
+		"Description":"Rewrite text into a third-person point of view with the ThirdPersonRephrase function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/b660462d-cb99-4b41-9413-13261a94e25f\/"
+	},
+	{
+		"Name":"TitleSuggest",
+		"Description":"Suggest a title for a given text with the TitleSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/17ee433e-efc7-45e2-a169-7b1257095636\/"
+	},
+	{
+		"Name":"TLDR",
+		"Description":"One sentence summary with the TLDR function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c9a6dc9f-3050-460e-8e28-0827cad664df\/"
+	},
+	{
+		"Name":"ToneDown",
+		"Description":"Rewrite over-the-top text with less-exaggerated wording with the ToneDown function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/237cca6f-02fd-4fa0-a92f-8c5a592d748a\/"
+	},
+	{
+		"Name":"TranscriptionCleanUp",
+		"Description":"Remove ums, uhs, and other filler words to make sentences flow better with the TranscriptionCleanUp function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4cca404b-5662-462c-b11a-2bd08cce2505\/"
+	},
+	{
+		"Name":"Translate",
+		"Description":"Translate provided text into a specified language with the Translate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/0b7f34ef-5097-43b7-91d8-01a5c259c7c6\/"
+	},
+	{
+		"Name":"Translated",
+		"Description":"Write the response in a specified language with the Translated chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/08cd4678-de41-4b66-b84d-473dce1f829c\/"
+	},
+	{
+		"Name":"TravelAdvisor",
+		"Description":"Enter your chat conversation with a TravelAdvisor identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4e70733f-8882-4010-8ad1-170ec6405d2b\/"
+	},
+	{
+		"Name":"TriviaQuizGenerate",
+		"Description":"Question and answer generation on any topic with the TriviaQuizGenerate function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/30131efa-3b3a-46f5-b6bf-c987980c54d9\/"
+	},
+	{
+		"Name":"TSV",
+		"Description":"Convert text to a tab-separated-value formatted table with the TSV chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/a9efee3f-88b0-49ad-be53-0812d5e32c66\/"
+	},
+	{
+		"Name":"TweetConvert",
+		"Description":"Rewrite text to post on twitter with the TweetConvert function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/4eadb881-5e1d-4c7a-b1c2-76cb95b6c5e7\/"
+	},
+	{
+		"Name":"TwentyQuestions",
+		"Description":"Enter your chat conversation with a TwentyQuestions identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/17700323-e831-4a9a-b112-269ce7981bf3\/"
+	},
+	{
+		"Name":"TwentyQuestionsGuesser",
+		"Description":"Enter your chat conversation with a TwentyQuestionsGuesser identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/595cee4a-b616-4784-9f78-20a4bfae053b\/"
+	},
+	{
+		"Name":"VariableNameSuggest",
+		"Description":"Suggest a alternative name for a variable in a given block of code with the VariableNameSuggest function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/e2f88654-0cee-4c82-8945-bc10962a155b\/"
+	},
+	{
+		"Name":"VerbTense",
+		"Description":"Find the tenses of verbs and verb phrases in a given text with the VerbTense function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/f3797dcf-ac46-4459-a0e5-5acc39e548ba\/"
+	},
+	{
+		"Name":"WilliamPlaywright",
+		"Description":"Enter your chat conversation with a WilliamPlaywright identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/acba26ad-a6ba-49da-9ce4-dbc5ca552d24\/"
+	},
+	{
+		"Name":"Wolfie",
+		"Description":"Enter your chat conversation with a Wolfie identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/d7de8c9c-70b7-45c8-a0f4-38a507da6529\/"
+	},
+	{
+		"Name":"WolframSampleCode",
+		"Description":"Create an example of Wolfram Language code using a specific symbol with the WolframSampleCode function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/001f0ec4-747b-46c8-a6d7-e37938ba3fe3\/"
+	},
+	{
+		"Name":"WordChain",
+		"Description":"Construct a sentence from a list of words with the WordChain function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/c9bbb03e-1415-42a7-a502-ab3b365cbe0c\/"
+	},
+	{
+		"Name":"WordOrigin",
+		"Description":"Finds the etymology of a given word with the WordOrigin function.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/ac4a3c3f-88a6-49dd-822c-e1488e5aeb06\/"
+	},
+	{
+		"Name":"YesNo",
+		"Description":"Responds with Yes or No exclusively with the YesNo chat modifier.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/32d56e8b-a9b7-4313-9da9-843c9d4a6d60\/"
+	},
+	{
+		"Name":"Yoda",
+		"Description":"Enter your chat conversation with a Yoda identity.",
+		"URL":"https:\/\/resources.wolframcloud.com\/PromptRepository\/resources\/821f4521-802b-4073-af27-189e27695ecc\/"
+	}
+]
