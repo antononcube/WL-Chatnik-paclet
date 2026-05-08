@@ -1,3 +1,10 @@
+
+BeginPackage["AntonAntonov`Chatnik`Scraper`"];
+
+Begin["`Private`"];
+
+Needs["AntonAntonov`Chatnik`"];
+
 ClearAll[allURL, ResourceURLQ, GetLinksWithBrowser, GetPromptInfo, ScrapePromptRecords];
 
 allURL = "https://resources.wolframcloud.com/PromptRepository/all";
@@ -20,8 +27,7 @@ GetLinksWithBrowser[url_] :=
  ];
 
 GetPromptInfoFromPage[url_String] := 
- Module[{xmlObj,t,title,description},
-    xmlObj = Import[url, "XMLObject"];
+ Module[{xmlObj,t,title,description}, xmlObj = Import[url, "XMLObject"];
 
     t = Cases[xmlObj, XMLElement["title", ___], Infinity];
     title = If[ Length[t]>0, First@StringSplit @ t[[1, 3, 1]], Missing["NotFound"]];
@@ -43,3 +49,6 @@ ScrapePromptRecords[url_: allURL]:=
         records = GetPromptInfoFromPage /@ links;
         records
     ];
+
+End[];
+EndPackage[];    
