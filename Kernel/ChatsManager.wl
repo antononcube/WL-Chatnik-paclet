@@ -24,7 +24,9 @@ GetProviderAndModel[spec_String] :=
     provider =
       Switch[ToLowerCase[provider],
         "chatgpt", "OpenAI",
+        "openai", "OpenAI",
         "google", "Gemini",
+        "gemini", "Gemini",
         "ollama", "Ollama",
         "chatollama", "Ollama",
         _, provider
@@ -92,11 +94,11 @@ posArgSpecs = {"input" -> StringSpec["Chat input text."]};
 
 optArgSpecs = {
    {"chat-id", "NONE"} -> StringSpec["Chat ID."],
-   {"model", "gpt-5-mini"} -> StringSpec["Model spec, e.g. 'ollama::gpt-oss:20b' or 'gpt-5.3-chat-latest'."],
+   {"model", ""} -> StringSpec["Model spec, e.g. 'ollama::gpt-oss:20b' or 'gpt-5.3-chat-latest'."],
    {"max-tokens", "-1"} -> NumericSpec["Integer", "Max number of tokents.", "Interval" -> {-1, Infinity}, "AllowInfinity" -> True],
    {"prompt", ""} -> StringSpec["Prompt used for chat object creation."],
    {"temperature", "-1"} -> NumericSpec["Real", "Temperature used for LLM generation.", "Interval" -> {-1, 3}],
-   {"reasoning", "none"} -> StringSpec["Reasoning effort."]
+   {"reasoning", ""} -> StringSpec["Reasoning effort."]
 };
 
 helpHeader = "Chat with persistent LLM-chat objects.";
@@ -111,13 +113,10 @@ Clear[ChatnikEvaluate];
 Options[ChatnikEvaluate] = Join[Options[ChatEvaluate], {"Location" -> "Local"}];
 
 ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] := 
-  Module[{res},
+  Module[{res, args2},
     res = ParseCommandLine[spec, args];
-    ChatnikEvaluate[
-      res[[1]]["input"], 
-      Select[res[[2]], NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto"}, ToLowerCase[#]]&], 
-      opts
-    ]
+    args2 = Select[res[[2]], NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto", ""}, StringTrim@ToLowerCase@#]&];
+    ChatnikEvaluate[res[[1]]["input"], args2, opts]
   ];
 
 ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
