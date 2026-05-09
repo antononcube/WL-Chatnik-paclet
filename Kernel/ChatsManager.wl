@@ -7,7 +7,16 @@ BeginPackage["AntonAntonov`Chatnik`ChatsManager`"];
 Begin["`Private`"];
 
 Needs["AntonAntonov`Chatnik`"];
+Needs["Wolfram`CommandLineParser`"];
 
+Clear[Proclaimer];
+Proclaimer[x_] := Echo[x, "Chatnik:"];
+
+(***************************************************************)
+(* Parse shortcut model spec                                   *)
+(***************************************************************)
+
+Clear[GetProviderAndModel];
 GetProviderAndModel[spec_String] := 
   Module[{provider, model}, 
    If[StringContainsQ[spec, "::"], 
@@ -26,26 +35,43 @@ GetProviderAndModel[spec_String] :=
     ]
    ];
 
+(***************************************************************)
+(* LLM configuration by CLI-parsed arguments.                  *)
+(***************************************************************)
+
 Clear[LLMConfigurationByArgs];
 LLMConfigurationByArgs[args_Association] :=
-  Module[{knownParamNames, confArgs, unknown, spec, confArgs2},
+  Module[{aMapToKnown, knownParamNames, confArgs, unknown, spec, confArgs2},
+   
+    aMapToKnown = <|
+      "i" -> "chat-id",
+      "id" -> "chat-id",
+      "max-tokens" -> "MaxTokens",
+      "model" -> "Model",
+      "prompt-delimiter" -> "PromptDelimiters",
+      "prompt" -> "Prompts",
+      "prompts" -> "Prompts",
+      "reasoning" -> "Reasoning",
+      "stop-tokens" -> "StopTokens",
+      "temperature" -> "Temperature",
+      "tools" -> "Tools",
+      "top-probabilities" -> "TopProbabilities",
+      "TotalProbabilityCutoff" -> "total-probability-cutoff"
+    |>;
 
-   knownParamNames = {"MaxTokens", "Model", "PromptDelimiter", 
-     "Prompts", "Reasoning", "StopTokens", "Temperature", "ToolMethod",
-      "Tools", "TopProbabilities", "TotalProbabilityCutoff"};
-   
-   confArgs = KeyTake[args, knownParamNames];
-   
+   knownParamNames = Values[aMapToKnown];
+
+   confArgs = KeyTake[KeyMap[# /. aMapToKnown&, args], knownParamNames];
    If[Length[args] > Length[confArgs], 
-     unknown = Keys@KeySelect[args, (! MemberQ[knownParamNames, #]) && (!MemberQ[{"i", "id", "chat-id", "prompt"}, #]) &];
+     unknown = Keys@KeySelect[args, (! MemberQ[knownParamNames, #]) && (!MemberQ[{"chat-id", "prompt"}, #]) &];
     
      If[Length[unknown] > 0,
-       Echo["Unknown LLM configuration option" <> If[Length[unknown] > 1, "s", ""] <> ": '" <> StringRiffle[unknown, ", "] <> "'.", "Chatnik:"]
+       Proclaimer["Unknown LLM configuration option" <> If[Length[unknown] > 1, "s", ""] <> ": '" <> StringRiffle[unknown, ", "] <> "'."]
      ]
    ];
    
    If[! KeyExistsQ[confArgs, "Model"] && Environment["CHATNIK_DEFAULT_MODEL"] =!= $Failed, 
-    confArgs["model"] = Environment["CHATNIK_DEFAULT_MODEL"]
+    confArgs["Model"] = Environment["CHATNIK_DEFAULT_MODEL"]
    ];
    
    If[KeyExistsQ[confArgs, "Model"],
@@ -58,7 +84,40 @@ LLMConfigurationByArgs[args_Association] :=
    LLMConfiguration[Join[<|"Model" -> {confArgs["Service"], confArgs["Name"]}|>, confArgs2]]
 ];
 
+(***************************************************************)
+(* CLI argument parsing specs                                  *)
+(***************************************************************)
+
+posArgSpecs = {"input" -> StringSpec["Chat input text."]};
+
+optArgSpecs = {
+   {"chat-id", "NONE"} -> StringSpec["Chat ID."],
+   {"model", "gpt-5-mini"} -> StringSpec["Model spec, e.g. 'ollama::gpt-oss:20b' or 'gpt-5.3-chat-latest'."],
+   {"max-tokens", "-1"} -> NumericSpec["Integer", "Max number of tokents.", "Interval" -> {-1, Infinity}, "AllowInfinity" -> True],
+   {"prompt", ""} -> StringSpec["Prompt used for chat object creation."],
+   {"temperature", "-1"} -> NumericSpec["Real", "Temperature used for LLM generation.", "Interval" -> {-1, 3}],
+   {"reasoning", "none"} -> StringSpec["Reasoning effort."]
+};
+
+helpHeader = "Chat with persistent LLM-chat objects.";
+
+spec = {posArgSpecs, optArgSpecs, helpHeader};
+
+(***************************************************************)
+(* Chatnik evaluate                                            *)
+(***************************************************************)
 Clear[ChantikEvaluate];
+
+ChatnikEvaluate[args:{_String...}, location_ : "Local"] := 
+  Module[{res},
+    res = ParseCommandLine[spec, args];
+    ChatnikEvaluate[
+      res[[1]]["input"], 
+      Select[res[[2]], NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto"}, ToLowerCase[#]]&], 
+      location
+    ]
+  ];
+
 ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, location_ : "Local"] :=
   Module[{aChats, chatID, prompt, conf, chatObj, sep, resObj, ans},
    
@@ -75,8 +134,9 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, location_ : "Local"] :=
    (*Warn if an existing chat-
    id is used and are also given a prompt and configuration spec*)
    If[(StringQ[prompt] || Length[KeyDrop[aArgs, {"chat-id", "id", "i"}]] > 0) && KeyExistsQ[aChats, chatID],
-     Echo[
-       StringTemplate["No new chat object is created.\nUsing chat object with id: ⎡`1`⎦, and number of messages: `2`"][chatID, Length@aChats[chatID]["Messages"]],"Chatnik:"]
+     Proclaimer[
+       StringTemplate["No new chat object is created.\nUsing chat object with id: ⎡`1`⎦, and number of messages: `2`"][chatID, Length@aChats[chatID]["Messages:"]]
+     ]
    ];
    
    (*Create an LLM configuration*)
@@ -104,7 +164,7 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, location_ : "Local"] :=
    ans
 ];
 
-ChatnikEvaluate[___]:=(Echo["The first argument is expected to be a string, the second argument is expected to be an association.", "Chatnik:"]; $Failed);
+ChatnikEvaluate[___]:=(Proclaimer["The first argument is expected to be a string, the second argument is expected to be an association."]; $Failed);
 
 End[]; (*`Private`*)
 
