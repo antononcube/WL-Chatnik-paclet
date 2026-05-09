@@ -1,7 +1,7 @@
 PacletObject[
   <|
     "Name" -> "AntonAntonov/Chatnik",
-    "Description" -> "CLI scripts for conversing with persistent LLM personas.s",
+    "Description" -> "CLI scripts for conversing with persistent LLM personas",
     "Creator" -> "Anton Antonov",
     "Version" -> "1.0.0",
     "WolframVersion" -> "14.3+",
