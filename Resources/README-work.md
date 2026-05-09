@@ -34,10 +34,10 @@ From [Wolfram Language Paclet Repository](https://resources.wolframcloud.com/Pac
 PacletInstall["AntonAntonov/Chatnik"]
 ```
 
-From [Wolfram Cloud](https://www.wolframcloud.com):
+From [Wolfram Cloud](https://www.wolframcloud.com/obj/antononcube/DeployedResources/Paclet/AntonAntonov/Chatnik/):
 
 ```
-PacletInstall[ResourceObject["https://wolfr.am/dfdeer"]]
+PacletInstall[ResourceObject["https://wolfr.am/1EaUfp9Tp"]]
 ```
 
 ----
