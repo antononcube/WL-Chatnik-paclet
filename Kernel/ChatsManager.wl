@@ -106,20 +106,24 @@ spec = {posArgSpecs, optArgSpecs, helpHeader};
 (***************************************************************)
 (* Chatnik evaluate                                            *)
 (***************************************************************)
-Clear[ChantikEvaluate];
+Clear[ChatnikEvaluate];
 
-ChatnikEvaluate[args:{_String...}, location_ : "Local"] := 
+Options[ChatnikEvaluate] = Join[Options[ChatEvaluate], {"Location" -> "Local"}];
+
+ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] := 
   Module[{res},
     res = ParseCommandLine[spec, args];
     ChatnikEvaluate[
       res[[1]]["input"], 
       Select[res[[2]], NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto"}, ToLowerCase[#]]&], 
-      location
+      opts
     ]
   ];
 
-ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, location_ : "Local"] :=
-  Module[{aChats, chatID, prompt, conf, chatObj, sep, resObj, ans},
+ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
+  Module[{location, aChats, chatID, prompt, conf, chatObj, sep, resObj, ans},
+
+   location = OptionValue[ChatnikEvaluate, "Location"];
    
    (*Get persistent chats*)
    aChats = PersistentSymbol["ChatnikChats", location];
@@ -150,7 +154,7 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, location_ : "Local"] :=
    sep = "\n";
    
    (*Evaluate message*)
-   resObj = Enclose[Confirm[ChatEvaluate[chatObj, input]]];
+   resObj = Enclose[Confirm[ChatEvaluate[chatObj, input, FilterRules[{opts}, Options[ChatEvaluate]] ]]];
    
    (*Register*)
    aChats[chatID] = resObj;
