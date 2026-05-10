@@ -203,7 +203,7 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    ans
 ];
 
-ChatnikEvaluate[___]:=(Proclaimer["The first argument is expected to be a string, the second argument is expected to be an association."]; $Failed);
+ChatnikEvaluate[___]:=(Proclaimer["The first argument is expected to be a string, the second argument is expected to be an association or a list of strings."]; $Failed);
 
 
 (***************************************************************)
