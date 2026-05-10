@@ -6,7 +6,7 @@ Needs["AntonAntonov`Chatnik`"];
 AntonAntonov`Chatnik`ChatsManager`Private`Proclaimer[x_] := WriteString[OutputStream["stderr", 2], x <> "\n"];
 
 (* Chat evaluation *)
-res = ChatnikEvaluate[Rest@$ScriptCommandLine, ProgressReporting -> False];
+res = ChatnikEvaluate[Rest@$ScriptCommandLine, "Clone" -> True, ProgressReporting -> False];
 
 (* Result *)
 WriteString[OutputStream["stdout", 1], ToString[res] <> "\n"];
