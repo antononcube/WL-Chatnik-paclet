@@ -24,9 +24,9 @@ Needs["AntonAntonov`Chatnik`ChatsManager`"];
 
 Clear[ChatnikCopyScripts];
 
-ChatnikCopyScripts::nos = "Currently Chatnik scripts are processed only for the MacOSX operating system.";
+ChatnikCopyScripts::naudir = "Currently automatic directory argument is supported only for the MacOSX operating systems.";
 ChatnikCopyScripts::ndir = "Cannot find the directory \"`1`\".";
-ChatnikCopyScripts::nargs = "The first optional argument is expected to be a directory path or Automatic.";
+ChatnikCopyScripts::nargs = "The first (optional) argument is expected to be a directory path or Automatic.";
 
 Options[ChatnikCopyScripts] = {"DropExtensions" -> True, "Aliases" -> False}; 
 
@@ -35,15 +35,17 @@ ChatnikCopyScripts[dir_ : Automatic] :=
     dropExtensionsQ = TrueQ[OptionValue[ChatnikCopyScripts, "DropExtensions"]];
     aliasesQ = TrueQ[OptionValue[ChatnikCopyScripts, "Aliases"]];
     
-    If[$OperatingSystem != "MacOSX",
-        Message[ChatnikCopyScripts::nos];
-        Return[$Failed]
-    ];
-    
     (*Expand for non-MacOSX*)
-    targetDir = If[TrueQ[dir === Automatic],
-     $HomeDirectory <> "/Applications",
-     dir
+    Which[
+      TrueQ[dir === Automatic] && $OperatingSystem != "MacOSX",
+      Message[ChatnikCopyScripts::naudir];
+      Return[$Failed],
+
+      TrueQ[dir === Automatic],
+      targetDir = $HomeDirectory <> "/Applications",
+     
+      True, 
+      targetDir = dir
     ];
 
     If[!DirectoryQ[targetDir],
@@ -59,7 +61,7 @@ ChatnikCopyScripts[dir_ : Automatic] :=
         baseNames = StringReplace[#, ".wls" -> ""]& /@ baseNames
     ];
 
-    res = MapThread[CopyFile[#1, FileNameJoin[{targetDir, #2}]]&, {fileNames, baseNames}];
+    res = MapThread[CopyFile[#1, FileNameJoin[{targetDir, #2}], OverwriteTarget -> True]&, {fileNames, baseNames}];
 
     (*Make executable*)
     Map[RunProcess[{"chmod", "a+x", #}]&, res];
