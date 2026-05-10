@@ -87,14 +87,13 @@ Which[
     ],
     
     MemberQ[{"clear", "clear-messages", "clearmessages"}, command] && opts["all"],
-    aChats = Map[ChatClearMessages[#, All]&, aChats];
+    aChats = Map[ChatnikClearMessages[#, All]&, aChats];
     PersistentSymbol["ChatnikChats"] = aChats,
 
     MemberQ[{"clear", "clear-messages", "clearmessages"}, command],
     If[KeyExistsQ[aChats, chatID],
         {min, max} = Values @ KeyTake[GetNRange[opts["n"], Length @ aChats[chatID]["Messages"]], {"min", "max"}];
-        Print[{min, max}];
-        aChats[chatID] = ChatClearMessages[aChats[chatID], {min, max}];
+        aChats[chatID] = ChatnikClearMessages[aChats[chatID], {min, max}];
         PersistentSymbol["ChatnikChats"] = aChats;
         ins = If[min == max, "message " <> ToString[min], "messages from " <> ToString[min] <> " to " <> ToString[max]];
         Proclaim["Cleared the " <> ins <> " of chat object " <> chatID <> "."]
