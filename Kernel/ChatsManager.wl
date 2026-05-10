@@ -210,7 +210,7 @@ ChatnikEvaluate[___]:=(Proclaimer["The first argument is expected to be a string
 (* Clear messages                                              *)
 (***************************************************************)
 
-ChatnikClearMessages[chatObj_ChatObject] := ChatClearMessages[chatObj, All];
+ChatnikClearMessages[chatObj_ChatObject] := ChatnikClearMessages[chatObj, All];
 
 ChatnikClearMessages[chatObj_ChatObject, All] := 
     ChatnikClearMessages[chatObj, {1, Length @ chatObj["Messages"]}];
