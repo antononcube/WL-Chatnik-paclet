@@ -65,7 +65,7 @@ LLMConfigurationByArgs[args_Association] :=
 
    confArgs = KeyTake[KeyMap[# /. aMapToKnown&, args], knownParamNames];
    If[Length[args] > Length[confArgs], 
-     unknown = Keys@KeySelect[args, (! MemberQ[knownParamNames, #]) && (!MemberQ[{"chat-id", "prompt", "echo"}, #]) &];
+     unknown = Keys@KeySelect[args, (! MemberQ[knownParamNames, #]) && (!MemberQ[{"chat-id", "prompt", "model", "echo"}, #]) &];
     
      If[Length[unknown] > 0,
        Proclaimer["Unknown LLM configuration option" <> If[Length[unknown] > 1, "s", ""] <> ": '" <> StringRiffle[unknown, ", "] <> "'."]
@@ -204,6 +204,23 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
 ];
 
 ChatnikEvaluate[___]:=(Proclaimer["The first argument is expected to be a string, the second argument is expected to be an association."]; $Failed);
+
+
+(***************************************************************)
+(* Clear messages                                              *)
+(***************************************************************)
+
+ChatClearMessages[chatObj_ChatObject] := ChatClearMessages[chatObj, All];
+
+ChatClearMessages[chatObj_ChatObject, All] := 
+    ChatClearMessages[chatObj, {1, Length @ chatObj["Messages"]}];
+
+ChatClearMessages[chatObj_ChatObject, {min_, max_}] := 
+    Module[{conf},
+      conf = chatObj["LLMEvaluator"];
+      conf = LLMConfiguration[conf, "Model" -> KeyTake[conf["Model"], {"Service", "Name"}]];
+      ChatObject[Drop[chatObj["Messages"], {min, max}], LLMEvaluator -> conf]
+    ];
 
 End[]; (*`Private`*)
 
