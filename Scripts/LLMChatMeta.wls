@@ -13,6 +13,8 @@ posArgSpecs = {"command" ->
 
 optArgSpecs = {
    {"chat-id", ""} -> StringSpec["Chat ID."],
+   {"id", ""} -> StringSpec["Chat ID. (Ignored if --chat-id is present.)"],
+   {"i", ""} -> StringSpec["Chat ID. (Ignored if --chat-id or --id are present.)"],
    {"all", "false"} -> BooleanSpec["Whether to apply the command to all chat objects or not."],
    {"n", "-Infinity"} -> NumericSpec["Integer", "Messages to clear. (For 'clear' and 'messages' only.)", "Interval" -> {-Infinity, Infinity}, "AllowInfinity" -> True],
    {"index", "-1"} -> NumericSpec["Integer", "Message index. (For 'message' only)", "Interval" -> {-Infinity, Infinity}, "AllowInfinity" -> True],
@@ -27,7 +29,7 @@ res = ParseCommandLine[spec, Rest@$ScriptCommandLine];
 
 command = ToLowerCase @ res[[1]]["command"];
 opts = res[[2]];
- 
+
 (*-------------------------------------------------------------*)
 (* Using stdout for results and stderr for reported errors     *)
 (*-------------------------------------------------------------*)
@@ -61,7 +63,11 @@ If[
 ];
 
 aChats = PersistentSymbol["ChatnikChats"];
-chatID = opts["chat-id"];
+chatID = Which[
+    StringTrim[opts["chat-id"]] != "", opts["chat-id"],
+    StringTrim[opts["id"]] != "", opts["id"], 
+    True, StringTrim[opts["i"]] 
+];
 
 If[Length[aChats] == 0,
     Proclaim["No chat objects."];
