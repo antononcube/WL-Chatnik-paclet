@@ -97,6 +97,8 @@ posArgSpecs = {"input" -> StringSpec["Chat input text."]};
 
 optArgSpecs = {
    {"chat-id", "NONE"} -> StringSpec["Chat ID."],
+   {"id", ""} -> StringSpec["Chat ID. (Ignored if --chat-id is present.)"],
+   {"i", ""} -> StringSpec["Chat ID. (Ignored if --chat-id or --id are present.)"],
    {"model", ""} -> StringSpec["Model spec, e.g. 'ollama::gpt-oss:20b' or 'gpt-5.3-chat-latest'."],
    {"max-tokens", "-1"} -> NumericSpec["Integer", "Max number of tokents.", "Interval" -> {-1, Infinity}, "AllowInfinity" -> True],
    {"prompt", ""} -> StringSpec["Prompt used for chat object creation."],
@@ -114,7 +116,7 @@ spec = {posArgSpecs, optArgSpecs, helpHeader};
 (***************************************************************)
 Clear[ChatnikEvaluate];
 
-Options[ChatnikEvaluate] = { "Location" -> "Local", "Echo" -> False, "ProgressReporting" -> False};
+Options[ChatnikEvaluate] = { "Location" -> "Local", "Clone" -> False, "Echo" -> False, "ProgressReporting" -> False};
 
 ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] := 
   Module[{res, args2, echoQ},
@@ -130,9 +132,10 @@ ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] :=
   ];
 
 ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
-  Module[{location, echoQ, progressQ, aChats, chatID, prompt, conf, confNew, chatObj, sep, resObj, ans},
+  Module[{location, echoQ, cloneQ, progressQ, aChats, chatID, prompt, conf, confNew, chatObj, sep, resObj, ans},
 
    location = OptionValue[ChatnikEvaluate, "Location"];
+   cloneQ = TrueQ[OptionValue[ChatnikEvaluate, "Clone"]];
    echoQ = TrueQ[OptionValue[ChatnikEvaluate, "Echo"]];
    progressQ = TrueQ[OptionValue[ChatnikEvaluate, "ProgressReporting"]];
     
@@ -143,7 +146,11 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    If[echoQ, Proclaimer["Persistent chat IDs : " <> ToString[Keys[aChats]]]];
 
    (*Get chat ID*)
-   chatID = Lookup[aArgs, "chat-id", Lookup[aArgs, "id", Lookup[aArgs, "i", "NONE"]]];
+   chatID = Which[
+      StringTrim[opts["chat-id"]] != "", opts["chat-id"],
+      StringTrim[opts["id"]] != "", opts["id"], 
+      True, StringTrim[opts["i"]] 
+   ];
    
    If[echoQ, Proclaimer["chat-id : " <> ToString[FullForm[chatID]] ]];
 
@@ -164,10 +171,11 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    (*Get chat object*)
    If[ KeyExistsQ[aChats, chatID],
      chatObj = aChats[chatID];
-     conf = chatObj["LLMEvaluator"];
-     confNew = LLMConfiguration[conf, "Model" -> KeyTake[conf["Model"], {"Service", "Name"}]];
-     chatObj = ChatObject[chatObj["Messages"], LLMEvaluator -> confNew]
-     ,
+     If[cloneQ,
+       conf = chatObj["LLMEvaluator"];
+       confNew = LLMConfiguration[conf, "Model" -> KeyTake[conf["Model"], {"Service", "Name"}]];
+       chatObj = ChatObject[chatObj["Messages"], LLMEvaluator -> confNew]
+     ],
      (*ELSE*)
      chatObj = ChatObject[prompt, LLMEvaluator -> conf]
     ];
