@@ -210,12 +210,12 @@ ChatnikEvaluate[___]:=(Proclaimer["The first argument is expected to be a string
 (* Clear messages                                              *)
 (***************************************************************)
 
-ChatClearMessages[chatObj_ChatObject] := ChatClearMessages[chatObj, All];
+ChatnikClearMessages[chatObj_ChatObject] := ChatClearMessages[chatObj, All];
 
-ChatClearMessages[chatObj_ChatObject, All] := 
-    ChatClearMessages[chatObj, {1, Length @ chatObj["Messages"]}];
+ChatnikClearMessages[chatObj_ChatObject, All] := 
+    ChatnikClearMessages[chatObj, {1, Length @ chatObj["Messages"]}];
 
-ChatClearMessages[chatObj_ChatObject, {min_, max_}] := 
+ChatnikClearMessages[chatObj_ChatObject, {min_, max_}] := 
     Module[{conf},
       conf = chatObj["LLMEvaluator"];
       conf = LLMConfiguration[conf, "Model" -> KeyTake[conf["Model"], {"Service", "Name"}]];

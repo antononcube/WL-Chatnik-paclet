@@ -17,7 +17,8 @@ PacletObject[
         "Root" -> "Kernel",
         "Context" -> {"AntonAntonov`Chatnik`"},
         "Symbols" -> {
-          "AntonAntonov`Chatnik`ChatClearMessages",
+          "AntonAntonov`Chatnik`ChatnikClearMessages",
+          "AntonAntonov`Chatnik`ChatnikCopyScripts",
           "AntonAntonov`Chatnik`ChatnikEvaluate",
           "AntonAntonov`Chatnik`ScrapePromptRecords"
         }
