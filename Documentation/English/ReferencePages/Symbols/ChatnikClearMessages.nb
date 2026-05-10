@@ -20,13 +20,13 @@ WindowFrame->Normal*)
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["ChatClearMessages", "ObjectName",
+Cell["ChatnikClearMessages", "ObjectName",
  CellID->739805025,ExpressionUUID->"90242b5d-7de2-4da8-9b94-c16b364871e1"],
 
 Cell[TextData[{
  Cell["   ", "ModInfo",ExpressionUUID->"4a66a958-f616-4f81-87e0-04471cb80321"],
  Cell[BoxData[
-  RowBox[{"ChatClearMessages", "[", 
+  RowBox[{"ChatnikClearMessages", "[",
    StyleBox["chat", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
   "6379ed93-2390-4027-b3d0-eecab8691913"],
  "\[LineSeparator]clear the messages of the chat object ",
@@ -36,7 +36,7 @@ Cell[TextData[{
  ".\n",
  Cell["   ", "ModInfo",ExpressionUUID->"cda056a2-5c04-48ca-9491-80f4e45530c7"],
  Cell[BoxData[
-  RowBox[{"ChatClearMessages", "[", 
+  RowBox[{"ChatnikClearMessages", "[",
    RowBox[{
     StyleBox["chat", "TI"], ",", " ", 
     RowBox[{"{", 
@@ -4729,7 +4729,7 @@ Cell[BoxData["7"], "Output",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"ChatClearMessages", "[", 
+ RowBox[{"ChatnikClearMessages", "[",
   RowBox[{"chatObj", ",", 
    RowBox[{"{", 
     RowBox[{"5", ",", "7"}], "}"}]}], "]"}]], "Input",
@@ -7199,7 +7199,7 @@ Cell["AntonAntonov`Chatnik`", "Categorization",
  CellLabel->"Context",
  CellID->922642077,ExpressionUUID->"775d9cd2-6780-46a6-be7c-8c7b184e26ab"],
 
-Cell["AntonAntonov/Chatnik/ref/ChatClearMessages", "Categorization",
+Cell["AntonAntonov/Chatnik/ref/ChatnikClearMessages", "Categorization",
  CellLabel->"URI",
  CellID->2013456799,ExpressionUUID->"77bcb24a-16d7-4156-9b7d-c1107a8a92b9"]
 }, Closed]],
