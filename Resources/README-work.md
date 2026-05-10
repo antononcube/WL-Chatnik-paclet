@@ -18,9 +18,9 @@ There are several consequences of this approach:
 
 **Remark:** This Wolfram Language (WL) paclet is a translation of the Raku package ["Chatnik"](https://github.com/antononcube/Raku-Chatnik), [AAp1] 
 and the Python package ["Chatnik"](https://pypi.org/project/Chatnik/), [AAp2].
-The WL CLI scripts are with CamelCase, i.e. `LLMChat` and `LLMChatMeta`. 
-The corresponding CLI scripts of the Raku package use kebab-case, i.e. `llm-chat` and `llm-chat-meta`.
-The corresponding CLI scripts of the Python package use snake_case, i.e. `llm_chat` and `llm_chat_meta`.
+The WL CLI scripts are with CamelCase, i.e. `LLMChat`, `LLMChatMeta`, and `LLMPrompt`. 
+The corresponding CLI scripts of the Raku package use kebab-case, i.e. `llm-chat`, `llm-chat-meta`, and `llm-prompt`.
+The corresponding CLI scripts of the Python package use snake_case, i.e. `llm_chat`, `llm_chat_meta`, and `llm_prompt`.
 
 **Remark:** In addition, the Raku package provides the "umbrella" CLI `chatnik`. 
 
@@ -39,6 +39,14 @@ From [Wolfram Cloud](https://www.wolframcloud.com/obj/antononcube/DeployedResour
 ```
 PacletInstall[ResourceObject["https://wolfr.am/1EaUfp9Tp"]]
 ```
+
+On MacOSX and Linux after paclet's installation run the command `ChatnikCopyScripts[<dir>]`, where the argument "dir" is in Shell's `PATH` variable.
+For example:
+
+```wl
+ChatnikCopyScripts["~/.local/bin"]
+```
+
 
 ----
 
@@ -61,33 +69,33 @@ The script `LLMChat` is used to create and chat with LLM personas (chat objects)
 1. Create _and_ chat with an LLM persona named "yoda1" (using the [Yoda chat persona](https://resources.wolframcloud.com/PromptRepository/resources/Yoda/)):
 
 ```shell
-LLMChat -i=yoda1 --prompt @Yoda hi who are you
+LLMChat 'hi who are you?' --i=yoda1 --prompt="$(LLMPrompt Yoda)"
 ```
 
 2. Continue the conversation with "yoda1":
 
 ```shell
-LLMChat -i=yoda1 since when do you use a green light saber
+LLMChat 'since when do you use a green light saber?' --i=yoda1
 ```
 
-**Remark:** The message input for `LLMChat` can be given in quotes. For example: `LLMChat 'Hi, again!' -i=yoda1`.
+**Remark:** The chat identifier can be specified with `--chat-id`, `--id`, and `--i`. For example: `LLMChat 'Hi, again!' --chat-idi=yoda1`.
 
 ### Apply prompt(s) to shell pipeline output
 
 Summarize a file using the prompt ["Summarize"](https://resources.wolframcloud.com/PromptRepository/resources/Summarize):
 
-```shell
+```
 cat README.md | LLMChat --prompt=@Summarize
 ```
 
 Summarize a file and then translate it to another language using the prompt ["Translate"](https://resources.wolframcloud.com/PromptRepository/resources/Translate):
 
-```shell
+```
 cat README.md | LLMChat --prompt=@Summarize | LLMChat -i=rt --prompt='!Translate|Russian'
 ```
 
 **Remark:** The second `LLMChat` invocation has to use different chat object identifier because the default 
-chat object, with identifier "NONE", is already primed with the prompt "Summary".
+chat object, with identifier "NONE", is already primed with the prompt "Summarize".
 
 -----
 
@@ -109,13 +117,13 @@ LLMChatMeta list --format=json
 Here we see the messages of "yoda1":
 
 ```shell
-LLMChatMeta messages -i yoda1
+LLMChatMeta messages --i=yoda1 
 ```
 
 Here we clear the messages:
 
 ```shell
-LLMChatMeta clear -i yoda1
+LLMChatMeta clear --i=yoda1
 ```
 
 
@@ -126,7 +134,7 @@ LLMChatMeta clear -i yoda1
 ### Asking for a result in specific format
 
 ```shell
-LLMChat -i=beta --model=ollama::gemma3:12b 'What are the populations of the Brazilian states? #NothingElse|"JSON data frame"' 
+LLMChat 'What are the populations of the Brazilian states? #NothingElse|"JSON data frame"' --i=beta --model=ollama::gemma3:12b 
 ```
 
 ### Make a request, echo, and place in clipboard  
@@ -151,7 +159,7 @@ There are several ways to do that.
 2. Use the prompt ["MermaidDiagram"](https://resources.wolframcloud.com/PromptRepository/resources/MermaidDiagram/) in `--prompt`
 
 ```
-LLMChat -i=mmd "$(cat README.md)" --model=ollama::gemma4:26b --prompt=@MermaidDiagram
+LLMChat "$(cat README.md)" --i=mmd --model=ollama::gemma4:26b --prompt=@MermaidDiagram
 ```
 
 #### 2
@@ -160,7 +168,7 @@ LLMChat -i=mmd "$(cat README.md)" --model=ollama::gemma4:26b --prompt=@MermaidDi
 2. Expand the prompt "manually" via `LLMPrompt` provided by "Chatnik".
 
 ```
-LLMChat -i=mmd "$(cat README.md)" --model=ollama::gemma4:26b --prompt="$(llm_prompt 'MermaidDiagram'  below)"
+LLMChat "$(cat README.md)" --i=mmd --model=ollama::gemma4:26b --prompt="$(LLMPrompt 'MermaidDiagram' below)"
 ```
 
 **Remark:** This example shows another computation result can be used as a prompt. 
@@ -173,13 +181,13 @@ I.e. no need to rely on the automatic prompt expansion.
    - Put additional prompting for further interaction 
 
 ```
-LLMChat -i=mmd @MermaidDiagram --model=ollama::gemma4:26b --prompt="FOCUS TEXT START:: $(cat README.md) ::END OF FOCUS TEXT. If it is not clear which text to use, use FOCUS TEXT."
+LLMChat @MermaidDiagram --i=mmd  --model=ollama::gemma4:26b --prompt="FOCUS TEXT START:: $(cat README.md) ::END OF FOCUS TEXT. If it is not clear which text to use, use FOCUS TEXT."
 ```
 
 This command allows to do further tasks with the file content as context. For example:
 
 ```
-LLMChat -i=mmd '!ThinkingHatsFeedback'
+LLMChat '!ThinkingHatsFeedback' --i=mmd 
 ```
 
 #### Result
@@ -220,7 +228,7 @@ mindmap
 Get feedback on a text with the prompt ["ThinkingHatsFeedback"](https://resources.wolframcloud.com/PromptRepository/resources/ThinkingHatsFeedback):
 
 ```
-cat README.md | LLMChat -i=th --prompt="$(llm-prompt ThinkingHatsFeedback 'the TEXT is GIVEN BELOW.' --format=Markdown)" --model=ollama::gemma4:26b 
+cat README.md | LLMChat --i=th --prompt="$(llm-prompt ThinkingHatsFeedback 'the TEXT is GIVEN BELOW.' --format=Markdown)" --model=ollama::gemma4:26b 
 ```
 
 **Remark:** By default the prompt "ThinkingHatsFeedback" gives the hat-feedback table in JSON format.
@@ -237,7 +245,7 @@ The command above works on macOS. On Linux instead of explicitly creating a file
 the argument `--suffix` can be passed to `mktemp`. For example:
 
 ```
-tmpfile=$(mktemp --suffix=".md"); LLMChatMeta -i=th last-message > "$tmpfile"; open "$tmpfile"
+tmpfile=$(mktemp --suffix=".md"); LLMChatMeta last-message --i=th > "$tmpfile"; open "$tmpfile"
 ```
 
 ### Tabulate the LLM personas summary
@@ -262,36 +270,6 @@ export CHATNIK_DEFAULT_MODEL=ollama::gemma4:26b
 ```
 
 Remove with `unset CHATNIK_DEFAULT_MODEL`. 
-
-### Pre-defined LLM personas
-
-Use defined LLM personas are specified with JSON file with a content like this:
-
-```json
-[
-    {
-	"chat-id": "raku",
-	"conf": "ChatGPT",
-	"prompt": "@CodeWriterX|Raku",
-	"model": "gpt-4o",
-	"max-tokens": 4096,
-	"temperature": 0.4
-    }
-]
-```
-
-(See such a file [here](https://github.com/antononcube/Raku-Jupyter-Chatbook/blob/master/resources/llm-personas.json).)
-
-The LLM personas JSON file can be specified with the OS environmental variable 
-`CHATNIK_LLM_PERSONAS_CONF`.
-
-To load the predefined LLM personas use the command:
-
-```
-LLMChatMeta load-llm-personas
-```
-
-**Remark:** Snake_case and CamelCase CLI commands are also allowed, e.g., `LLMChatMeta LoadLLMPersonas`.
 
 -----
 
