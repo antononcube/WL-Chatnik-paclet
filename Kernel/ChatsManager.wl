@@ -79,8 +79,11 @@ LLMConfigurationByArgs[args_Association] :=
    If[KeyExistsQ[confArgs, "Model"],
      spec = GetProviderAndModel[confArgs["Model"]];
      confArgs["Service"] = spec["Service"];
-     confArgs["Name"] = spec["Name"];
-  ];
+     confArgs["Name"] = spec["Name"],
+     (*ELSE*)
+     confArgs["Service"] = "OpenAI";
+     confArgs["Name"] = "gpt-4.1-mini"
+   ];
    
    confArgs2 = KeyDrop[confArgs, {"Service", "Name", "Model"}];
    LLMConfiguration[Join[<|"Model" -> {confArgs["Service"], confArgs["Name"]}|>, confArgs2]]
@@ -110,27 +113,39 @@ spec = {posArgSpecs, optArgSpecs, helpHeader};
 (***************************************************************)
 Clear[ChatnikEvaluate];
 
-Options[ChatnikEvaluate] = Join[Options[ChatEvaluate], {"Location" -> "Local"}];
+Options[ChatnikEvaluate] = { "Location" -> "Local", "Echo" -> False, "ProgressReporting" -> False};
 
 ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] := 
-  Module[{res, args2},
+  Module[{res, args2, echoQ},
+    
+    echoQ = TrueQ[OptionValue[ChatnikEvaluate, "Echo"]];
+
     res = ParseCommandLine[spec, args];
     args2 = Select[res[[2]], NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto", ""}, StringTrim@ToLowerCase@#]&];
+
+    If[echoQ, Proclaimer["ParseCommandLine result : " <> ToString[args2] ]];
+
     ChatnikEvaluate[res[[1]]["input"], args2, opts]
   ];
 
 ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
-  Module[{location, aChats, chatID, prompt, conf, chatObj, sep, resObj, ans},
+  Module[{location, echoQ, progressQ, aChats, chatID, prompt, conf, chatObj, sep, resObj, ans},
 
    location = OptionValue[ChatnikEvaluate, "Location"];
-   
+   echoQ = TrueQ[OptionValue[ChatnikEvaluate, "Echo"]];
+   progressQ = TrueQ[OptionValue[ChatnikEvaluate, "ProgressReporting"]];
+    
    (*Get persistent chats*)
    aChats = PersistentSymbol["ChatnikChats", location];
    If[! AssociationQ[aChats], aChats = <||>];
    
+   If[echoQ, Proclaimer["Persistent chat IDs : " <> ToString[Keys[aChats]]]];
+
    (*Get chat ID*)
    chatID = Lookup[aArgs, "chat-id", Lookup[aArgs, "id", Lookup[aArgs, "i", "NONE"]]];
    
+   If[echoQ, Proclaimer["chat-id : " <> ToString[FullForm[chatID]] ]];
+
    (*Get prompt*)
    prompt = Lookup[aArgs, "prompt", Nothing];
    
@@ -147,21 +162,33 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    
    (*Get chat object*)
    chatObj = Lookup[aChats, chatID, ChatObject[prompt, LLMEvaluator -> conf]];
-   
+
+   If[echoQ, Proclaimer["Chat object \"ChatID\" : " <> ToString[chatObj["ChatID"]]]];
+
+   If[echoQ, Proclaimer["LLM-evaluator : " <> ToString[InputForm[chatObj["LLMEvaluator"]]]]];
+
    (*We can get a delimiter from the configuration.
    But for prompt expansions it is most like better to use new line.*)
    sep = "\n";
    
    (*Evaluate message*)
-   resObj = Enclose[Confirm[ChatEvaluate[chatObj, input, FilterRules[{opts}, Options[ChatEvaluate]] ]]];
+   resObj = Enclose[ConfirmBy[ChatEvaluate[chatObj, input, ProgressReporting -> progressQ], TrueQ[Head[#] === ChatObject]&, "ChatEvaluate"]];
    
+   If[TrueQ[Head[resObj] === Failure],
+    Proclaimer["Cannot evaluate the chat object with the given input. Message and chat object are not registered."];
+    Return[$Failed]
+   ];
+
    (*Register*)
    aChats[chatID] = resObj;
    PersistentSymbol["ChatnikChats", location] = aChats;
    
    (*Result*)
    ans = Last@resObj["Messages"];
-   If[KeyExistsQ[ans, "Content"],
+
+   If[echoQ, Proclaimer["LLM-answer : " <> ToString[ans]]];
+ 
+   If[AssociationQ[ans] && KeyExistsQ[ans, "Content"],
      ans = StringRiffle[Map[First@KeyDrop[#, "Type"] &, Select[ans["Content"], #["Type"] == "Text" &]], sep]
    ];
    ans
