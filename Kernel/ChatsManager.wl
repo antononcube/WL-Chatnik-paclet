@@ -96,9 +96,9 @@ LLMConfigurationByArgs[args_Association] :=
 posArgSpecs = {"input" -> StringSpec["Chat input text."]};
 
 optArgSpecs = {
-   {"chat-id", "NONE"} -> StringSpec["Chat ID."],
+   {"chat-id", ""} -> StringSpec["Chat ID."],
    {"id", ""} -> StringSpec["Chat ID. (Ignored if --chat-id is present.)"],
-   {"i", ""} -> StringSpec["Chat ID. (Ignored if --chat-id or --id are present.)"],
+   {"i", "NONE"} -> StringSpec["Chat ID. (Ignored if --chat-id or --id are present.)"],
    {"model", ""} -> StringSpec["Model spec, e.g. 'ollama::gpt-oss:20b' or 'gpt-5.3-chat-latest'."],
    {"max-tokens", "-1"} -> NumericSpec["Integer", "Max number of tokents.", "Interval" -> {-1, Infinity}, "AllowInfinity" -> True],
    {"prompt", ""} -> StringSpec["Prompt used for chat object creation."],
@@ -146,11 +146,7 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    If[echoQ, Proclaimer["Persistent chat IDs : " <> ToString[Keys[aChats]]]];
 
    (*Get chat ID*)
-   chatID = Which[
-      StringTrim[opts["chat-id"]] != "", opts["chat-id"],
-      StringTrim[opts["id"]] != "", opts["id"], 
-      True, StringTrim[opts["i"]] 
-   ];
+   chatID = Lookup[aArgs, "chat-id", Lookup[aArgs, "id", Lookup[aArgs, "i", "NONE"]]];
    
    If[echoQ, Proclaimer["chat-id : " <> ToString[FullForm[chatID]] ]];
 
