@@ -41,6 +41,9 @@ CannotFind[x_] := If[StringLength[StringTrim@x]>0,
         Proclaim["No chat ID is specified"]
 ];
 
+delimThick = StringJoin @@ Table["=", 60];
+delimThin = StringJoin @@ Table["-", 60];
+
 (*-------------------------------------------------------------*)
 (* Get n range                                                 *)
 (*-------------------------------------------------------------*)
@@ -122,7 +125,10 @@ Which[
         CannotFind[chatID]
     ],
 
-    MemberQ[{"card", "full-text", "fulltext"}, command] && !opts["all"],
+    MemberQ[{"messages", "full-text", "fulltext"}, command] && opts["all"],
+    KeyValueMap[(Say[delimThick]; Say["Chat ID : " <> #1 <> "\n"]; Say[delimThin]; Say[#2["FullText"]])&, aChats],
+
+    MemberQ[{"messages", "full-text", "fulltext"}, command],
     If[KeyExistsQ[aChats, chatID],
         Say[aChats[chatID]["FullText"]],
         (* ELSE *)
