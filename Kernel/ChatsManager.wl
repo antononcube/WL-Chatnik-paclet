@@ -65,7 +65,7 @@ LLMConfigurationByArgs[args_Association] :=
 
    confArgs = KeyTake[KeyMap[# /. aMapToKnown&, args], knownParamNames];
    If[Length[args] > Length[confArgs], 
-     unknown = Keys@KeySelect[args, (! MemberQ[knownParamNames, #]) && (!MemberQ[{"chat-id", "prompt"}, #]) &];
+     unknown = Keys@KeySelect[args, (! MemberQ[knownParamNames, #]) && (!MemberQ[{"chat-id", "prompt", "echo"}, #]) &];
     
      If[Length[unknown] > 0,
        Proclaimer["Unknown LLM configuration option" <> If[Length[unknown] > 1, "s", ""] <> ": '" <> StringRiffle[unknown, ", "] <> "'."]
@@ -101,7 +101,8 @@ optArgSpecs = {
    {"max-tokens", "-1"} -> NumericSpec["Integer", "Max number of tokents.", "Interval" -> {-1, Infinity}, "AllowInfinity" -> True],
    {"prompt", ""} -> StringSpec["Prompt used for chat object creation."],
    {"temperature", "-1"} -> NumericSpec["Real", "Temperature used for LLM generation.", "Interval" -> {-1, 3}],
-   {"reasoning", ""} -> StringSpec["Reasoning effort."]
+   {"reasoning", ""} -> StringSpec["Reasoning effort."],
+   {"echo", "false"} -> BooleanSpec["Whether to echo the intermediate results or not."]
 };
 
 helpHeader = "Chat with persistent LLM-chat objects.";
@@ -118,18 +119,18 @@ Options[ChatnikEvaluate] = { "Location" -> "Local", "Echo" -> False, "ProgressRe
 ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] := 
   Module[{res, args2, echoQ},
     
-    echoQ = TrueQ[OptionValue[ChatnikEvaluate, "Echo"]];
-
     res = ParseCommandLine[spec, args];
-    args2 = Select[res[[2]], NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto", ""}, StringTrim@ToLowerCase@#]&];
+    args2 = Select[res[[2]], BooleanQ[#] || NumericQ[#] && # >= 0 || StringQ[#] && !MemberQ[{"none", "automatic", "auto", ""}, StringTrim@ToLowerCase@#]&];
+
+    echoQ = args2["echo"];
 
     If[echoQ, Proclaimer["ParseCommandLine result : " <> ToString[args2] ]];
 
-    ChatnikEvaluate[res[[1]]["input"], args2, opts]
+    ChatnikEvaluate[res[[1]]["input"], args2, "Echo" -> echoQ, opts]
   ];
 
 ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
-  Module[{location, echoQ, progressQ, aChats, chatID, prompt, conf, chatObj, sep, resObj, ans},
+  Module[{location, echoQ, progressQ, aChats, chatID, prompt, conf, confNew, chatObj, sep, resObj, ans},
 
    location = OptionValue[ChatnikEvaluate, "Location"];
    echoQ = TrueQ[OptionValue[ChatnikEvaluate, "Echo"]];
@@ -151,7 +152,7 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    
    (*Warn if an existing chat-
    id is used and are also given a prompt and configuration spec*)
-   If[(StringQ[prompt] || Length[KeyDrop[aArgs, {"chat-id", "id", "i"}]] > 0) && KeyExistsQ[aChats, chatID],
+   If[(StringQ[prompt] || Length[KeyDrop[aArgs, {"chat-id", "id", "i", "echo"}]] > 0) && KeyExistsQ[aChats, chatID],
      Proclaimer[
        StringTemplate["No new chat object is created.\nUsing chat object with id: ⎡`1`⎦, and number of messages: `2`"][chatID, Length@aChats[chatID]["Messages:"]]
      ]
@@ -161,7 +162,15 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    conf = LLMConfigurationByArgs[KeyDrop[aArgs, {"chat-id", "id", "i"}]];
    
    (*Get chat object*)
-   chatObj = Lookup[aChats, chatID, ChatObject[prompt, LLMEvaluator -> conf]];
+   If[ KeyExistsQ[aChats, chatID],
+     chatObj = aChats[chatID];
+     conf = chatObj["LLMEvaluator"];
+     confNew = LLMConfiguration[conf, "Model" -> KeyTake[conf["Model"], {"Service", "Name"}]];
+     chatObj = ChatObject[chatObj["Messages"], LLMEvaluator -> confNew]
+     ,
+     (*ELSE*)
+     chatObj = ChatObject[prompt, LLMEvaluator -> conf]
+    ];
 
    If[echoQ, Proclaimer["Chat object \"ChatID\" : " <> ToString[chatObj["ChatID"]]]];
 
