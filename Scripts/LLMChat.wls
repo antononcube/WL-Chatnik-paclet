@@ -6,15 +6,17 @@ Needs["AntonAntonov`Chatnik`"];
 AntonAntonov`Chatnik`ChatsManager`Private`Proclaimer[x_] := WriteString[OutputStream["stderr", 2], x <> "\n"];
 
 (* Prepend pipeline input if given and there is no positional argument. *)
-(* The no-positional-argument might be too restrictive. *)
+(* The no-positional-argument might be too restrictive *)
 input = Rest@$ScriptCommandLine;
-If[StringQ[$ScriptInputString] && StringLength[$ScriptInputString] > 0 && StringStartsQ[First @ input, "-"],
-    If[$OperatingSystem == "Windows", 
-        input = Prepend[input, $ScriptInputString], 
-        (*ELSE*)
-        stdin = $ScriptInputString <> Import["!cat", "String"];
-        input = Prepend[input, stdin]
-    ]
+
+stdin = If[$OperatingSystem == "Windows",      
+    $ScriptInputString, 
+    (*ELSE*)
+    $ScriptInputString <> Import["!cat", "String"]
+];
+
+If[StringQ[stdin] && StringLength[stdin] > 0 && StringStartsQ[First @ input, "-"],
+    input = Prepend[input, stdin]
 ]
 
 (* Chat evaluation *)
