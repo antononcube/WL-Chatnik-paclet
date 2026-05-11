@@ -21,6 +21,7 @@ PacletObject[
           "AntonAntonov`Chatnik`ChatnikCopyScripts",
           "AntonAntonov`Chatnik`ChatnikEvaluate",
           "AntonAntonov`Chatnik`ChatnikPromptExpand",
+          "AntonAntonov`Chatnik`ChatnikPromptRecords",
           "AntonAntonov`Chatnik`ScrapePromptRecords"
         }
       },
@@ -32,10 +33,12 @@ PacletObject[
       {
         "Resource",
         "Root" -> "Resources",
-        "Resources" ->
-            {
-              {"Resource", "Prompt-repository-records.json"}
-            }
+        "Resources" -> {
+          {
+            "Resource",
+            "Prompt-repository-records.json"
+          }
+        }
       }
     }
   |>
