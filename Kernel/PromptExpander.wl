@@ -19,7 +19,7 @@ pmtParam = pmtParamQuoted | pmtParamSimple;
 pmtListOfParams = pmtParam ~~ ("|" ~~ pmtParam) ...;
 
 pmtPersona = 
-  StringExpression[
+  matched: StringExpression[
     StartOfString,
     (WhitespaceCharacter ...), 
     "@", 
@@ -28,25 +28,26 @@ pmtPersona =
       "|" ~~ params : pmtListOfParams
     ], 
     ("|" ...) 
-  ] :> <|"name" -> name, "params" -> params|>;
+  ] :> <|"matched" -> matched, "name" -> name, "params" -> params|>;
 
 pmtModifier = 
-  "#" ~~ name : (LetterCharacter ..) ~~ ("|" ~~ params : pmtListOfParams ~~ ("|") ...) ... :> <|"name" -> name, "params" -> params|>;
+  matched:( "#" ~~ name : (LetterCharacter ..) ~~ ("|" ~~ params : pmtListOfParams ~~ ("|") ...) ... ):> <|"matched" -> matched, "name" -> name, "params" -> params|>;
 
-pmtFunction = ("!" | "&") ~~ name : (WordCharacter ..) ~~ "|" ~~ params : pmtListOfParams ~~ ("|" ...) :> <|"name" -> name, "params" -> params|>;
+pmtFunction = 
+  matched:( ("!" | "&") ~~ name : (WordCharacter ..) ~~ "|" ~~ params : pmtListOfParams ~~ ("|" ...) ):> <|"matched" -> matched, "name" -> name, "params" -> params|>;
 
 pmtFunctionCell = 
-  StringExpression[
+  matched: StringExpression[
     StartOfString, 
     WhitespaceCharacter ..., 
     ("!" | "&"),
     name : LetterCharacter .., 
     RepeatedNull["|" ~~ params : pmtListOfParams ~~ RepeatedNull["|"]],
     RepeatedNull[WhitespaceCharacter .. | ">"], cellArg__
-  ] :> <|"name" -> name, "params" -> params, "cellArg" -> cellArg|>;
+  ] :> <|"matched" -> matched, "name" -> name, "params" -> params, "cellArg" -> cellArg|>;
 
 pmtFunctionPrior =
-  StringExpression[
+  matched: StringExpression[
     StartOfString,
     WhitespaceCharacter ...,
     ("!" | "&"),
@@ -57,7 +58,7 @@ pmtFunctionPrior =
     pointer : ("^" ..), 
     WhitespaceCharacter ...,
     EndOfString 
-  ] :> <|"name" -> name, "params" -> params, "pointer" -> pointer|>;
+  ] :> <|"matched" -> matched, "name" -> name, "params" -> params, "pointer" -> pointer|>;
 
 pmtAny = 
   Alternatives[pmtPersona, pmtFunctionPrior, pmtFunction, pmtFunctionCell, pmtModifier];
@@ -84,19 +85,57 @@ ParseParams[str_] := If[StringQ[str], Map[ToUnquoted, Select[StringSplit[str, "|
 (* Main parser                                                *)
 (*------------------------------------------------------------*)
 
-PromptFunctionSpec[assoc_, messages_, sep_] := 
-  Module[{name, params = {}, args = {}, p, end = sep},
+PromptFunctionSpec[input_?StringQ, parsed_?AssociationQ, messages_ : {}, sep_ : "\n"] := 
+  Module[{matched, name, params, cellArg, args = {}, p, end = sep},
   
-  Nothing
-];
+    matched = Lookup[parsed, "matched", ""];
+    name = Lookup[parsed, "name", ""];
+    params = Lookup[parsed, "params", ""];
+    cellArg = Lookup[parsed, "cellArg", ""];
+    
+    (* No changes to the input of no prompt is found *)
+    If[StringLength[matched] == 0 || StringLength[name] == 0 || Length[ChatnikPromptRecords[name]],
+      Return[input]
+    ];
+  
+    (* Known prompt template *)
+    p = LLMPrompt[name];
 
-ChatnikPromptExpansion[input_String, messages_: {}, sep_ : "\n"] :=
-  StringReplace[
-   input,
-   pmtAnyPattern :>
-     With[{a = Association[Rest @ StringCases[#, Rule[_, _], Overlaps -> True]] &},
-       PromptFunctionSpec[a@#, messages, sep]
-     ]
+    (*Prepare template to arguments*)
+    args = StringTrim /@ StringSplit[params, "|"];
+    args = ToUnquoted /@ args;
+
+    If[StringLength[cellArg] > 0,
+      args = Append[args, cellArg] 
+    ];
+
+    (* Process pointer if any *)
+    If[KeyExistsQ[parsed, "pointer"] && Length[messages] > 0,
+      Which[  
+        parsed["pointer"] == "^",
+        args = Append[args, Last @ messages],
+
+        parsed["pointer"] == "^^",
+        args = Append[args, StringRiffle[messages, sep]]
+      ]
+    ];
+
+    (* Apply template to arguments *)
+    StringReplace[input, matched -> TemplateApply[p, args]]
+  ];
+
+ChatnikPromptExpand[input_?StringQ, messages_: {}, sep_ : "\n"] :=
+  Module[{lsParsed, res = input},
+    (* This single pass parsing is somewhat deficient, but works for most cases. *)
+
+    Map[(
+      lsParsed = StringCases[res, aParsers[#]];
+      If[Length[lsParsed] > 0, 
+        res = Fold[PromptFunctionSpec[#1, #2, messages, sep]&, res, lsParsed]
+      ]
+    )&, {"Persona", "FuncPrior", "FuncCell", "Func", "Modifier"}];
+
+    res
   ];
 
 End[];
