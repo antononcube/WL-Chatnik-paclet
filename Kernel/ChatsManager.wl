@@ -132,7 +132,7 @@ ChatnikEvaluate[args:{_String...}, opts: OptionsPattern[]] :=
   ];
 
 ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
-  Module[{location, echoQ, cloneQ, progressQ, aChats, chatID, prompt, conf, confNew, chatObj, sep, resObj, ans},
+  Module[{location, echoQ, cloneQ, progressQ, aChats, chatID, prompt, conf, confNew, chatObj, sep, messages, resObj, ans},
 
    location = OptionValue[ChatnikEvaluate, "Location"];
    cloneQ = TrueQ[OptionValue[ChatnikEvaluate, "Clone"]];
@@ -150,11 +150,14 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    
    If[echoQ, Proclaimer["chat-id : " <> ToString[FullForm[chatID]] ]];
 
-   (*Get prompt*)
+   (*Get the prompt if given and expand it*)
    prompt = Lookup[aArgs, "prompt", Nothing];
    
-   (*Warn if an existing chat-
-   id is used and are also given a prompt and configuration spec*)
+   If[StringQ[prompt] && StringLength[prompt] > 0, 
+     prompt = ChatnikPromptExpand[prompt]
+   ];
+
+   (*Warn if an existing chat-id is used and are also given a prompt and configuration spec*)
    If[(StringQ[prompt] || Length[KeyDrop[aArgs, {"chat-id", "id", "i", "echo"}]] > 0) && KeyExistsQ[aChats, chatID],
      Proclaimer[
        StringTemplate["No new chat object is created.\nUsing chat object with id: ⎡`1`⎦, and number of messages: `2`"][chatID, Length@aChats[chatID]["Messages:"]]
@@ -185,7 +188,9 @@ ChatnikEvaluate[input_?StringQ, aArgs_?AssociationQ, opts: OptionsPattern[]] :=
    sep = "\n";
    
    (*Evaluate message*)
-   resObj = Enclose[ConfirmBy[ChatEvaluate[chatObj, input, ProgressReporting -> progressQ], TrueQ[Head[#] === ChatObject]&, "ChatEvaluate"]];
+   messages = chatObj["Messages"];
+   messages = Function[{m}, StringRiffle[Map[#["Data"]&, m["Content"]], sep]] /@ messages;
+   resObj = Enclose[ConfirmBy[ChatEvaluate[chatObj, ChatnikPromptExpand[input, messages, sep], ProgressReporting -> progressQ], TrueQ[Head[#] === ChatObject]&, "ChatEvaluate"]];
    
    If[TrueQ[Head[resObj] === Failure],
     Proclaimer["Cannot evaluate the chat object with the given input. Message and chat object are not registered."];
