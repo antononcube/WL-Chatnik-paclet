@@ -1,3 +1,4 @@
+(* ::Package:: *)
 
 BeginPackage["AntonAntonov`Chatnik`Scraper`"];
 
