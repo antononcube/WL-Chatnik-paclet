@@ -94,7 +94,7 @@ PromptFunctionSpec[input_?StringQ, parsed_?AssociationQ, messages_ : {}, sep_ : 
     cellArg = Lookup[parsed, "cellArg", ""];
     
     (* No changes to the input of no prompt is found *)
-    If[StringLength[matched] == 0 || StringLength[name] == 0 || Length[ChatnikPromptRecords[name]],
+    If[StringLength[matched] == 0 || StringLength[name] == 0 || Length[ChatnikPromptRecords[name]] == 0,
       Return[input]
     ];
   
