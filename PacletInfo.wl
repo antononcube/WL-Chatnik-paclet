@@ -20,6 +20,7 @@ PacletObject[
           "AntonAntonov`Chatnik`ChatnikClearMessages",
           "AntonAntonov`Chatnik`ChatnikCopyScripts",
           "AntonAntonov`Chatnik`ChatnikEvaluate",
+          "AntonAntonov`Chatnik`ChatnikPromptExpand",
           "AntonAntonov`Chatnik`ScrapePromptRecords"
         }
       },
