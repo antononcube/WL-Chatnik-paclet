@@ -8,16 +8,19 @@ AntonAntonov`Chatnik`ChatsManager`Private`Proclaimer[x_] := WriteString[OutputSt
 (* Prepend pipeline input if given and there is no positional argument. *)
 (* The no-positional-argument might be too restrictive *)
 input = Rest@$ScriptCommandLine;
-
-stdin = If[$OperatingSystem == "Windows",      
-    $ScriptInputString, 
-    (*ELSE*)
-    $ScriptInputString <> Import["!cat", "String"]
+stdin = $ScriptInputString;      
+If[input[[1]] == "-",
+    stdin = If[$OperatingSystem == "Windows",      
+        $ScriptInputString, 
+        (*ELSE*)
+        $ScriptInputString <> Import["!cat", "String"]
+    ];
+    input = Rest[input]
 ];
 
 If[StringQ[stdin] && StringLength[stdin] > 0 && StringStartsQ[First @ input, "-"],
     input = Prepend[input, stdin]
-]
+];
 
 (* Chat evaluation *)
 res = ChatnikEvaluate[input, "Clone" -> True, ProgressReporting -> False];
