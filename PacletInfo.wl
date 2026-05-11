@@ -27,6 +27,14 @@ PacletObject[
         "Documentation",
         "Root" -> "Documentation",
         "Language" -> "English"
+      },
+      {
+        "Resource",
+        "Root" -> "Resources",
+        "Resources" ->
+            {
+              {"Resource", "Prompt-repository-records.json"}
+            }
       }
     }
   |>
