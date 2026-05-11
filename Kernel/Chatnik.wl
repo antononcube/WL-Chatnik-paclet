@@ -14,13 +14,15 @@ using persistent chat-objects association at specified location. (\"Local\" by d
 
 ChatnikClearMessages::usage = "Clear messages of a chat object."
 
+ChatnikPromptExpand::usage = "Expand prompts according the chatbook cells DSL.";
+
 ChatnikCopyScripts::usage = "Copy paclet's scripts and make them executable.";
 
 Begin["`Private`"];
 
-Needs["AntonAntonov`Chatnik`Scraper`"];
 Needs["AntonAntonov`Chatnik`ChatsManager`"];
-
+Needs["AntonAntonov`Chatnik`PromptExpander`"];
+Needs["AntonAntonov`Chatnik`Scraper`"];
 
 Clear[ChatnikCopyScripts];
 
