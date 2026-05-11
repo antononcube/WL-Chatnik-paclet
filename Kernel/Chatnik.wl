@@ -16,6 +16,8 @@ ChatnikClearMessages::usage = "Clear messages of a chat object."
 
 ChatnikPromptExpand::usage = "Expand prompts according the chatbook cells DSL.";
 
+ChatnikPromptRecords::usage = "Give known prompt names and their short descriptions.";
+
 ChatnikCopyScripts::usage = "Copy paclet's scripts and make them executable.";
 
 Begin["`Private`"];
@@ -23,6 +25,10 @@ Begin["`Private`"];
 Needs["AntonAntonov`Chatnik`ChatsManager`"];
 Needs["AntonAntonov`Chatnik`PromptExpander`"];
 Needs["AntonAntonov`Chatnik`Scraper`"];
+
+(***************************************************************)
+(* Copy scripts                                                *)
+(***************************************************************)
 
 Clear[ChatnikCopyScripts];
 
@@ -72,6 +78,32 @@ ChatnikCopyScripts[dir_ : Automatic] :=
   ];
 
 ChatnikCopyScripts[___] := (Message[ChatnikCopyScripts::nargs]; $$Failed);
+
+(***************************************************************)
+(* Give prompts and slogans                                  *)
+(***************************************************************)
+
+lsPromptRecords = None;
+
+Clear[ChatnikPromptRecords];
+
+ChatnikPromptRecords[] := ChatnikPromptRecords[All];
+
+ChatnikPromptRecords[All] :=
+  Module[{p},
+    If[ListQ[lsPromptRecords], 
+      lsPromptRecords,
+      (*ELSE*)
+      p = First @ PacletFind["AntonAntonov/Chatnik"];
+      lsPromptRecords = Import[FileNameJoin[{p["Location"], "Resources", "Prompt-repository-records.json"}], "RawJSON"]
+    ]
+  ];
+
+ChatnikPromptRecords[name_?StringQ] :=
+  Select[ChatnikPromptRecords[All], ToLowerCase[#Name] == ToLowerCase[name]&];
+
+ChatnikPromptRecords[pat_StringExpression] :=
+  Select[ChatnikPromptRecords[All], StringMatchQ[#Name, pat]&];
 
 End[];
 EndPackage[];
