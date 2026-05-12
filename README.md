@@ -234,7 +234,7 @@ Further we can make an image from that JSON result using a pipeline that:
 LLMChatMeta last-message --i=beta | sed '1d; $d' | wolframscript -code 'gr=ImportString[Import["!cat", "String"],"RawJSON"]//ReverseSort//ListPlot[#, ImageSize->600, PlotTheme -> "Detailed", PlotRange->All]&; Export["./beta.png", gr]' && open ./beta.png 
 ```
 
-![](./Resources/beta.png)
+![](Resources/img/beta.png)
 
 **Remark:** Instead of the ([buggy](https://mathematica.stackexchange.com/a/204022)) $ScriptInputString, the shell pipeline value was obtained with Import["!cat", "String"].
 
