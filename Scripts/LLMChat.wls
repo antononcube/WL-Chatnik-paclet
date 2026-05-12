@@ -6,7 +6,7 @@ Needs["AntonAntonov`Chatnik`"];
 AntonAntonov`Chatnik`ChatsManager`Private`Proclaimer[x_] := WriteString[OutputStream["stderr", 2], x <> "\n"];
 
 (* Prepend pipeline input if given and there is no positional argument. *)
-(* The no-positional-argument might be too restrictive *)
+(* The no-positional-argument check might be too restrictive *)
 input = Rest@$ScriptCommandLine;
 stdin = $ScriptInputString;      
 If[input[[1]] == "-",
@@ -18,7 +18,7 @@ If[input[[1]] == "-",
     input = Rest[input]
 ];
 
-If[StringQ[stdin] && StringLength[stdin] > 0 && StringStartsQ[First @ input, "-"],
+If[StringQ[stdin] && StringLength[stdin] > 0 && StringMatchQ[First @ input, "-" ~~ __],
     input = Prepend[input, stdin]
 ];
 
