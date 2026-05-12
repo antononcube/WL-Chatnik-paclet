@@ -1,6 +1,6 @@
 # Chatnik
 
-Wolfram Language paclet that provides Command Line Interface (CLI) scripts for conversing with persistent Large Language Model (LLM) personas.
+"Chatnik" is a Wolfram Language paclet that provides Command Line Interface (CLI) scripts for conversing with persistent Large Language Model (LLM) personas.
 
 "Chatnik" uses files of the host Operating System (OS) to maintain persistent interaction with multiple LLM chat objects.
 
@@ -23,6 +23,8 @@ The corresponding CLI scripts of the Raku package use kebab-case, i.e. `llm-chat
 The corresponding CLI scripts of the Python package use snake_case, i.e. `llm_chat`, `llm_chat_meta`, and `llm_prompt`.
 
 **Remark:** In addition, the Raku package provides the "umbrella" CLI `chatnik`. 
+
+**Remark:** When the phrase "Chatnik system" is used that is in order to emphasize that there are "Chatnik" packages in several programming languages with (almost) the same design and usage.
 
 ----
 
@@ -69,7 +71,7 @@ The script `LLMChat` is used to create and chat with LLM personas (chat objects)
 1. Create _and_ chat with an LLM persona named "yoda1" (using the [Yoda chat persona](https://resources.wolframcloud.com/PromptRepository/resources/Yoda/)):
 
 ```shell
-LLMChat 'hi who are you?' --i=yoda1 --prompt="$(LLMPrompt Yoda)"
+LLMChat 'hi who are you?' --i=yoda1 --prompt=@Yoda
 ```
 
 2. Continue the conversation with "yoda1":
@@ -134,10 +136,12 @@ LLMChatMeta clear --i=yoda1
 ### Asking for a result in specific format
 
 ```shell
-LLMChat 'What are the populations of the Brazilian states? #NothingElse|"JSON data frame"' --i=beta --model=ollama::gemma3:12b 
+LLMChat 'What are the populations of the Brazilian states? #NothingElse|"JSON data frame"' --i=beta --model=gpt-4.1-mini 
 ```
 
 ### Make a request, echo, and place in clipboard  
+
+This command works on MacOSX, the shells of which have the program `pbcopy`:
 
 ```
 LLMChat -i=unix '@CodeWriterX|Shell macOS list of files echo the result and copy to clipboard.' | tee /dev/tty | pbcopy
@@ -251,7 +255,7 @@ tmpfile=$(mktemp --suffix=".md"); LLMChatMeta last-message --i=th > "$tmpfile"; 
 ### Tabulate the LLM personas summary
 
 If the text browser [`w3m`](https://w3m.sourceforge.net) and the Raku package ["Data::Translators"](https://raku.land/zef:antononcube/Data::Translators) are installed,
-the following pipeline can be used to tabulate the summary the LLM personas:
+the following pipeline can be used to tabulate the summary of the LLM personas:
 
 ```shell
 LLMChatMeta list --format=json | data-translation | w3m -T text/html -dump -cols 120
@@ -419,14 +423,14 @@ sequenceDiagram
 
 Keeping the persistent chat objects database is a fairly straightforward using the 
 [Wolfram Language persistent values system](https://reference.wolfram.com/language/guide/SettingPersistentValues.html). 
-Efficiency considerations for "using the WL and OS to manage the database" are probably can not that important 
+Efficiency considerations for "using the WL and OS to manage the database" are probably not that important 
 because LLMs invocation is (much) slower in comparison.
 
 
 ----
 ## References
 
-## Articles, blog posts
+### Articles, blog posts
 
 [AA1] Anton Antonov,
 ["Chatnik: LLM Host in the Shell — Part 1: First Examples & Design Principles"](https://rakuforprediction.wordpress.com/2026/04/25/chatnik-llm-host-in-the-shell-part-1-first-examples-design-principles/),
