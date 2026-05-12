@@ -58,7 +58,11 @@ GetNRange[n_, elems_Integer] :=
 (*-------------------------------------------------------------*)
 (* Process commands                                            *)
 (*-------------------------------------------------------------*)
-If[
+Which[
+    MemberQ[{"file", "persistent-location", "persistenlocation"}, command],
+    ToString@PersistentObject["ChatnikChats", "Local"]["Location"];
+    Exit[0],
+
     MemberQ[{"delete", "drop"}, command] && opts["all"],
     PersistentSymbol["ChatnikChats"] = <||>;
     Proclaim["Deleted all chat objects."];
@@ -111,13 +115,35 @@ Which[
         CannotFind[chatID]
     ],
 
-    MemberQ[{"first-message", "firstmessage", "last-message", "lastmessage"}, command] && !opts["all"],
+    MemberQ[{"context", "first-message", "firstmessage", "last-message", "lastmessage"}, command] && !opts["all"],
     If[KeyExistsQ[aChats, chatID],
         If[Length[aChats[chatID]["Messages"]] > 0, 
-            i = If[StringStartsQ[command, "first"], 1, -1];
+            i = If[StringStartsQ[command, "first" | "context"], 1, -1];
             m = aChats[chatID]["Messages"][[i]];
             m = StringRiffle[Map[#["Data"]&, m["Content"]], "\n"];
             Say[m],
+            (*ELSE*)
+            Proclaim["The chat object " <> chatID <> " has no messages."]
+        ],
+        (* ELSE *)
+        CannotFind[chatID]
+    ],
+
+    "message" == command && !opts["all"],
+    If[KeyExistsQ[aChats, chatID],
+        If[Length[aChats[chatID]["Messages"]] > 0, 
+            If[KeyExistsQ[opts, "index"],
+                i = opts[["index"]];
+                If[0 < Abs[i] <= Length[aChats[chatID]["Messages"]],
+                    m = aChats[chatID]["Messages"][[i]];
+                    m = StringRiffle[Map[#["Data"]&, m["Content"]], "\n"];
+                    Say[m],
+                    (*ELSE*)
+                    Proclaim["Index is out of range. The chat object " <> chatID <> " has " <> ToString[Length[aChats[chatID]["Messages"]]] <> " messages."]
+                ],
+                (*ELSE*)
+                Proclaim["For the command message the option --index have to be used."]
+            ],
             (*ELSE*)
             Proclaim["The chat object " <> chatID <> " has no messages."]
         ],
@@ -131,6 +157,16 @@ Which[
     MemberQ[{"messages", "full-text", "fulltext"}, command],
     If[KeyExistsQ[aChats, chatID],
         Say[aChats[chatID]["FullText"]],
+        (* ELSE *)
+        CannotFind[chatID]
+    ],
+
+    MemberQ[{"card", "message-grid", "messagegrid"}, command] && opts["all"],
+    Say[ToString @ InputForm @ Map[#["MessageGrid"]&, aChats]],
+
+    MemberQ[{"card", "message-grid", "messagegrid"}, command],
+    If[KeyExistsQ[aChats, chatID],
+        Say[ToString @ InputForm @ aChats[chatID]["MessageGrid"]],
         (* ELSE *)
         CannotFind[chatID]
     ],
