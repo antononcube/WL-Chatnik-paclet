@@ -59,8 +59,8 @@ GetNRange[n_, elems_Integer] :=
 (* Process commands                                            *)
 (*-------------------------------------------------------------*)
 Which[
-    MemberQ[{"file", "persistent-location", "persistenlocation"}, command],
-    ToString@PersistentObject["ChatnikChats", "Local"]["Location"];
+    MemberQ[{"file", "location", "persistent-location", "persistenlocation"}, command],
+    Say @ ToString@PersistentObject["ChatnikChats", "Local"]["Location"];
     Exit[0],
 
     MemberQ[{"delete", "drop"}, command] && opts["all"],
