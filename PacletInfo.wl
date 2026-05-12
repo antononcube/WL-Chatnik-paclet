@@ -7,7 +7,7 @@ PacletObject[
     "Creator" -> "Anton Antonov",
     "License" -> "MIT",
     "PublisherID" -> "AntonAntonov",
-    "Version" -> "1.0.1",
+    "Version" -> "1.0.2",
     "WolframVersion" -> "14.3+",
     "PrimaryContext" -> "AntonAntonov`Chatnik`",
     "DocumentationURL" -> "https://resources.wolframcloud.com/PacletRepository/resources",
