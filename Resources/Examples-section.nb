@@ -1,0 +1,1028 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     49503,       1018]
+NotebookOptionsPosition[     43848,        897]
+NotebookOutlinePosition[     45960,        948]
+CellTagsIndexPosition[     45700,        938]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Examples",
+ Cell[BoxData[
+  PaneSelectorBox[{True->
+   TemplateBox[{"ExampleNotebook", 
+     Cell[
+      BoxData[
+       FrameBox[
+        Cell[
+        "Provide examples showing how to install, configure, and load your \
+Paclet along with some basic usage. This section will be displayed on the \
+main landing page for your Paclet when deployed to the cloud or published in \
+the Wolfram Language Paclet Repository.\n\nThe usage examples should provide \
+a succinct overview of what types of features users can expect from your \
+paclet. Detailed examples should be reserved for the corresponding function, \
+guide, or tutorial pages.\n\nThe default content appearing here shows the \
+recommended structure for this section, but any of it can be removed or \
+changed as desired. Use additional cells and cell styles as needed.", 
+         "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20, 
+        FrameStyle -> GrayLevel[0.9], RoundingRadius -> 5, ImageSize -> {
+          Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> True, 
+      CellTags -> {"SectionMoreInfoExampleNotebook"}, 
+      CellMargins -> {{66, 66}, {15, 15}}]},
+    "MoreInfoOpenerButtonTemplate"]}, Dynamic[
+    CurrentValue[
+     EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
+   ImageSize->Automatic]],ExpressionUUID->
+  "e831ff02-300f-4130-af38-7bbacd674f88"]
+}], "Section",
+ Editable->False,
+ Deletable->False,
+ TaggingRules->{"TemplateGroupName" -> "ExampleNotebook"},
+ CellTags->{"ExampleNotebook", "Examples", "TemplateCellGroup"},
+ CellID->576412824,ExpressionUUID->"7fef9e64-1428-4429-be7f-d8c2c395b58d"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Initialization for Examples",
+ Cell[BoxData[
+  PaneSelectorBox[{True->
+   TemplateBox[{"ExampleInitialization", 
+     Cell[
+      BoxData[
+       FrameBox[
+        Cell[
+         TextData[{
+          "Put any initialization code that's needed for evaluating examples \
+here.\n\nCells marked as excluded will not appear anywhere in the published \
+paclet except for the definition notebook.\n\nCells can be toggled as \
+excluded using ", 
+           Cell[
+            BoxData[
+             StyleBox[
+              RowBox[{"Tools", 
+                RowBox[{" ", "\[FilledRightTriangle]", " "}], "Cells", 
+                RowBox[{" ", "\[FilledRightTriangle]", " "}], 
+                RowBox[{
+                  RowBox[{"Mark", "/", "unmark"}], " ", "selected", " ", 
+                  "cells", " ", "as", " ", "excluded"}]}], StripOnInput -> 
+              False, ShowStringCharacters -> False, FontFamily -> 
+              "Source Sans Pro", FontSize -> 14, FontWeight -> "SemiBold", 
+              FontColor -> GrayLevel[0.28627]]]], 
+           " from the toolbar above."}], "MoreInfoText"], Background -> 
+        GrayLevel[0.95], FrameMargins -> 20, FrameStyle -> GrayLevel[0.9], 
+        RoundingRadius -> 5, ImageSize -> {
+          Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> True, 
+      CellTags -> {"SectionMoreInfoExampleInitialization"}, 
+      CellMargins -> {{66, 66}, {15, 15}}]},
+    "MoreInfoOpenerButtonTemplate"]}, Dynamic[
+    CurrentValue[
+     EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
+   ImageSize->Automatic]],ExpressionUUID->
+  "762f9ab5-db66-4585-8ad1-6bc4cab2f74c"]
+}], "Subsection", "Excluded",
+ Editable->False,
+ Deletable->True,
+ TaggingRules->{"TemplateGroupName" -> "ExampleInitialization"},
+ CellTags->{
+  "ExampleInitialization", "Initialization for Examples", "TemplateCellGroup"},
+ CellID->630358806,ExpressionUUID->"604049c6-f943-450f-9ec0-7e87891d0d13"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PacletDirectoryLoad", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}]], "Input", "Excluded",
+ TaggingRules->{},
+ InitializationCell->True,
+ CellLabel->"In[1]:=",
+ CellID->264453224,ExpressionUUID->"de48af04-c37a-42b2-848a-b8a4fc6333ac"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<AntonAntonov`Chatnik`\>\"", "]"}], 
+  ";"}]], "Input", "Excluded",
+ TaggingRules->{},
+ InitializationCell->True,
+ CellLabel->"In[2]:=",
+ CellID->814364577,ExpressionUUID->"59c7692e-39c5-475a-a592-a21e7bbe773a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
+ CellID->816121734,ExpressionUUID->"6e40844a-ec8f-421c-b30f-5157705241bd"],
+
+Cell[TextData[{
+ "The script \"LLMChat\" is used to interact with the chat objects. Create \
+and chat with an LLM persona named \"yoda1\" (using the ",
+ ButtonBox["Yoda chat persona",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://resources.wolframcloud.com/PromptRepository/resources/Yoda"],
+     None},
+  ButtonNote->
+   "https://resources.wolframcloud.com/PromptRepository/resources/Yoda"],
+ "):"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.98733039275891*^9, {3.9873304296639643`*^9, 3.9873304296642*^9}, {
+   3.987541639224131*^9, 3.987541667452157*^9}},
+ CellTags->"DefaultContent",
+ CellID->489008670,ExpressionUUID->"bd421ae9-bff1-440f-9f8f-c8c48339b10b"],
+
+Cell["\<\
+LLMChat 'hi, who are you?' --i=yoda1 --prompt=@Yoda
+
+# Hmmm. Yoda, I am. Jedi Master, wise and old. Much to teach, I have. Yes, \
+hmmm.\
+\>", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.987586736293057*^9, 3.9875867369694777`*^9}},
+ CellID->140766796,ExpressionUUID->"762afc58-c7b6-46c6-b0e9-bc88286b5ed2"],
+
+Cell["Continue the conversation with \"yoda1\":", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{3.98733085841466*^9},
+ CellID->1941798359,ExpressionUUID->"471b3b7f-476c-4dba-8ef7-9b024e277819"],
+
+Cell["\<\
+LLMChat 'since when do you use a green light saber?' --chat-id=yoda1
+
+# Green, my lightsaber is, yes. Symbol of a Jedi Consular, it is. Wisdom and \
+harmony, it represents. Since my training as a Jedi, I have wielded it. A \
+sign of my connection with the Force, green blades are. Hmm. Use it wisely, I \
+do.\
+\>", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.987586745257091*^9, 3.987586745776601*^9}},
+ CellID->1519540614,ExpressionUUID->"46bdcb59-e8f6-4dba-b623-720ce109d40f"],
+
+Cell["\<\
+Execute a chat object management command using the script LLMChatMeta -- view \
+the whole interaction with \"yoda1\":\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9873309285648947`*^9, 3.987330946849966*^9}, {
+  3.987330985716524*^9, 3.9873310105122004`*^9}, {3.987541746594051*^9, 
+  3.987541760275301*^9}},
+ CellID->376389276,ExpressionUUID->"25bfc620-a6f6-4719-a535-d11634a38308"],
+
+Cell["LLMChatMeta full-text --chat-id=yoda1 ", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.987586756912095*^9, 3.987586760688424*^9}},
+ CellID->493724997,ExpressionUUID->"70ce9596-645b-4270-bf26-2c203c537a19"],
+
+Cell["Clear the messages of \"yoda1\":", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9873310132868767`*^9, 3.987331023967517*^9}},
+ CellID->2068565705,ExpressionUUID->"3259ece5-144f-4fdd-b640-f6c6792e59e6"],
+
+Cell["LLMChatMeta clear --chat-id=yoda1 ", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.987586767113242*^9, 3.987586767525537*^9}},
+ CellID->2146116374,ExpressionUUID->"d43efed2-95d7-4ca7-ace3-0d3790e08150"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Scope", "Subsection",
+ TaggingRules->{},
+ CellID->189825519,ExpressionUUID->"637f67c7-e527-4e72-94cf-c4a6ae5e0561"],
+
+Cell[CellGroupData[{
+
+Cell["Installation MacOSX & Linux", "Subsubsection",
+ TaggingRules->{},
+ CellChangeTimes->{{3.987331368519368*^9, 3.9873313731528397`*^9}, {
+  3.987409858758325*^9, 3.987409871388185*^9}, {3.9874151685316353`*^9, 
+  3.9874151698817453`*^9}, {3.987415247212759*^9, 3.9874152487988367`*^9}},
+ CellID->462403203,ExpressionUUID->"042263ee-fd75-4ed0-a787-06e69edd2f46"],
+
+Cell[TextData[{
+ "Copy paclet's scripts to a directory that is already in shell's ",
+ Cell[BoxData["PATH"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b6290776-1b8c-4312-bdf7-7f62a447916b"],
+ " variable. For example, \"~/.local/bin\":"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9874049386711893`*^9, 3.9874049503698463`*^9}, {
+  3.987409756665781*^9, 3.9874097953413973`*^9}, {3.987415184011919*^9, 
+  3.987415239466524*^9}},
+ CellID->1379475188,ExpressionUUID->"f49fff80-93b8-4a01-bf13-8bfa746ec61a"],
+
+Cell[BoxData[
+ RowBox[{"ChatnikCopyScripts", "[", "\"\<~/.local/bin\>\"", "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9874152665444403`*^9, 3.9874152758440647`*^9}},
+ CellID->463853030,ExpressionUUID->"c7f20117-a42c-4b9b-8c75-c6f0d0e7e510"],
+
+Cell[TextData[{
+ "On MacOSX if no directory is specified for ",
+ Cell[BoxData[
+  ButtonBox["ChatnikCopyScripts",
+   BaseStyle->"Link",
+   ButtonData->"paclet:AntonAntonov/Chatnik/ref/ChatnikCopyScripts"]], 
+  "InlineFormula",ExpressionUUID->"57881d9f-c8d1-4c26-800d-0172cc6a175a"],
+ " (i.e the directory is ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Automatic", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Automatic",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2e03a113-8be2-44aa-b25e-4a3ea3d71739"],
+ ") then paclet's scripts are copied in the \"~/Applications\" directory:"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9874049386711893`*^9, 3.9874049503698463`*^9}, {
+   3.987409756665781*^9, 3.9874097953413973`*^9}, {3.987415282173305*^9, 
+   3.987415344397828*^9}, 3.987415947791066*^9, {3.987584083007721*^9, 
+   3.987584083495426*^9}},
+ CellID->48958861,ExpressionUUID->"4bfb15f2-9776-4fbb-92aa-9266dca418f3"],
+
+Cell[BoxData[
+ RowBox[{"ChatnikCopyScripts", "[", "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.987409801203108*^9, 3.9874098084603043`*^9}},
+ CellID->1296780026,ExpressionUUID->"5e2439d8-b73c-4974-89e9-758e98eb3286"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Chat pipelines", "Subsubsection",
+ TaggingRules->{},
+ CellChangeTimes->{{3.987331380249324*^9, 3.987331390733634*^9}},
+ CellID->1689922512,ExpressionUUID->"83f8a2c1-e5e5-40e8-a230-40854a784f83"],
+
+Cell["\<\
+Longer CLI pipelines make \"Chatnik\" very useful. For example:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.987412578652136*^9, 3.987412622857461*^9}, 
+   3.9874126632366943`*^9},
+ CellID->838399123,ExpressionUUID->"6c9f9374-84f1-4dec-950b-c02845411b06"],
+
+Cell["\<\
+cat README.md | LLMChat - --prompt=@Summarize && LLMChat \
+\"&Translate|Russian^\"\
+\>", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.98758677405757*^9, 3.987586774425577*^9}},
+ CellID->1591289143,ExpressionUUID->"de813569-073c-40f7-a14e-ef96a3116c36"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Chat objects management ", "Subsubsection",
+ TaggingRules->{},
+ CellChangeTimes->{{3.9873309146878347`*^9, 3.987330921139737*^9}},
+ CellID->1323273837,ExpressionUUID->"0dcb3e55-3a13-407a-bd23-492a21676833"],
+
+Cell["\<\
+The script \"LLMChatMeta\" is used to manage the chat objects. Here is its \
+usage message:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.987410561439701*^9, 3.9874106197188263`*^9}, {
+  3.9874154710624123`*^9, 3.987415471492517*^9}, {3.9875416197357264`*^9, 
+  3.987541620245949*^9}},
+ CellID->12581532,ExpressionUUID->"6056f329-21de-483f-9f37-85b83004690d"],
+
+Cell["\<\
+LLMChatMeta --help
+
+# Chat with persistent LLM-chat objects.
+# 
+# * Mandatory positional arguments:
+# NAME       DOCUMENTATION
+# command    Command, one of: card, clear, context, delete, file, \
+first-message, last-message, list, load-llm-personas, message, messages.
+# 
+# * Optional arguments (must be passed as --name=... in any order):
+# NAME       DEFAULT      DOCUMENTATION
+# chat-id                 Chat ID.
+# all        false        Whether to apply the command to all chat objects or \
+not.
+# n          -Infinity    Messages to clear. (For 'clear' and 'messages' only.)
+# index      -1           Message index. (For 'message' only)
+# format                  Format of the result. (For 'list' and 'context' \
+only.)\
+\>", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.987586783042636*^9, 3.987586783501112*^9}},
+ CellID->1113094263,ExpressionUUID->"214437c0-f582-452d-b8db-6e8c539b31a7"],
+
+Cell["Give a list of all chat object summaries in JSON format:", "Text",
+ CellChangeTimes->{{3.9875868345741787`*^9, 3.987586865893633*^9}},
+ CellID->297622367,ExpressionUUID->"1cf3a273-ed12-4cc4-8bed-fea3096a5a64"],
+
+Cell["\<\
+LLMChatMeta list --format=json
+
+# {
+# \t\"yoda1\":{
+# \t\t\"ChatID\":\"aa02f6c7-9223-4ebe-b216-607253b09fa7\",
+# \t\t\"Messages\":7,
+# \t\t\"LLMConfiguration\":{
+# \t\t\t\"Service\":\"OpenAI\",
+# \t\t\t\"Name\":\"gpt-4.1-mini\"
+# \t\t},
+# \t\t\"Usage\":\"274 tokens\"
+# \t}
+# }\
+\>", "ExternalLanguage",
+ TaggingRules->{
+  "ResourceType" -> "Paclet", "ResourceCreateNotebook" -> True, 
+   "TemplateVersion" -> "2025.05.14", "CreationTimestamp" -> 
+   3.986981391990842`16.353219197891182*^9, "UpdatedTimestamp" -> 
+   3.986981391990882`16.353219197891185*^9, "CompatibilityTest" -> 
+   HoldComplete[
+     BinaryDeserialize[
+      BaseDecode[
+      "OEM6eJzVWFtv2zYUri+\
+5IPEyNECB9a0PeciCbR2GAduaXerJSeohSZPQ6XNo6UgRTJMqSaXxv98hJTm2I7mS7WCdHxJapL7z8\
+dz40X5N7TpiGImYe0f3kQSlQsH9mlq7jEPQfj13uq7qXR//\
+Ntrcw39rRx9jytTO3geQZv48HvZBSt9+9t+aFYQO4RIHLSeWErj+QFkM/\
+jO1e3SHI6rNW0JDX4gBrmqehkqrVo8GQciDq5iBIq0rUCKWLvRGEZBmh2qKNJvvuQuFLNf+\
+ZsIdmGUJ4J4juIZ7fUH1rd8o2vk5gKfIfmaPjJSGocNCpH3TAT/\
+k4STdm4dXXhlS2Wt5S1XzPGYMif3weDI1cAUBUgWJTP0wiKV1zXi7f5UldQWRUKEWcpQAJjgqBWrY+\
+NXU5jENWSwxMjX11QV1GeguV5oyRr4pYuivL+Lshdza6ompyGwRLTEf/hGhsdc4o5HdQ8xd86a/\
+llgmLwuda8lRZdJ6O8EiEQu1eUyY0E6N1G5I/c0fEw/qh1uWPOavIt+WJX/\
+gNwu81CBg7G11xCdui0Cp38qiZoP3scYwgmcKagsjzagLbcyrFcJum6LrAKMj8BB3+\
+51gHgYSE5OrP8sCX8jwDgFv7pK2cCIBv0m1cc1V2g5yvNGpik6jCLh3zW8p9xh4DjCm5jpmVRbm+\
+Ai/VvaSi7DY8VIE8rwHQ9yABmPuRIo4Wh4Ua7fVZmaE7eAOE/\
+qFg4sCIUNQ3zu34A764h4f7zw8NtZJK5uz33bQHo2ZtvXNdQ5T8nX2iEBSm7mhLt3NxoFQg564jjwc\
+p32/OMorAJ8KcAMfbGQlsHnCRJ+\
+ym1tzpE16VP1S1uwJ6Heh5wFPGlH5cj2m3B05tyJ0oRNSJoJJYq2UmNR4SuL5ik2Z8kEedYqzz+\
+2sOZMIfIwBd012Uw8wLzN4icfFeL/\
+TBibAsiNlrSdjW9pLdokqh102yJIulSHqp6oUeL9KjaVSZtbqlIcyf57Dp7E/\
+c32cFIg6q0p5L1ZwCgF1R92AC5l0pyzWqmmikV98h2Ut5eDOFN68MlzSzLweW1frp/\
+imbYzHVf0WgM7a2LTFlZUSlsQ2Mgfsi1SBegq6hdWIEtqq5nWzutsxdWn5qY0u9uwAM3Wzy62x0Wec\
+3BizLth4Cly672U7UuOT4RFs/8HbY/MTNmvqqPIxSLngoUvZhRQRoLesnluU8wTR/\
+EtEPW2GrbZSwg2t9r5U7cq1HaVsyQjpj4YmhzbbVoz0xGrgbJqQHWKBzkBTz9wP0hsY2XRCnVxAXiY\
+rXl+BD9Jk96ts6qG7rCYqE0ZnaCW3p/EdKrmCNk/R54+uns/s5+\
+At3gmWuazMuUlU0PcHhSjVBH01nHkK/udCJLwEDmgAxMWAVNPt14WYyWmXlweJsYWF/JOZnK/\
+sS3qvjJ5fCOoLU/EXy0ehgqx/CmuL6Pz9Qh6zwr64bP8nSn6hboEAP362X81KZ2fp4FoF/\
+7oQ5ikkezHpKfcsLNS/K8RfTplXxS0rxX8v54//VoAvRfILkt2/\
+Fu6DuJJG2H9mK2QZ3X1Y8rjKVdsLU11Qbnfn/Mae/TiO1RZHs2bny+6Vwq5Sfi8TnHKi+1+K4NOh"]\
+]], "DefinitionNotebookFramework" -> "DefinitionNotebookClient", 
+   "RuntimeConfiguration" -> {
+    "Contexts" -> {"PacletResource`", "PacletResource`DefinitionNotebook`"}, 
+     "DefaultContentMethod" -> "Tagged", "HintPods" -> True, "LoadingMethod" -> 
+     "Paclet", "PacletName" -> "PacletResource"}, "ToolsOpen" -> True, 
+   "StatusMessage" -> "", "SubmissionReviewData" -> {"Review" -> False}, 
+   "AutoUpdate" -> True, "Paclet" -> "None", 
+   "Openers" -> {
+    "PrimaryExamplesSection" -> Open, 
+     "ExampleSection" -> {"0" -> Closed, "2" -> Closed}}, 
+   "PacletBuildData" -> {
+    "LastBuiltArchive" -> 
+     "/Volumes/Macintosh \
+HD/Users/antonov/WL-Chatnik-paclet/build/AntonAntonov__Chatnik-1.0.1.paclet", 
+     "FileHashes" -> ByteArray[CompressedData["
+1:eJwB7QMS/CFib1JiAQAAAOADAAA4Qzp4nJ2WbUxTVxjHl1I0YMxQiLzIXLNm
+0OFOa3yBURxbKcy0toIcRRwqHG5P20sv597cc4v0w3RjcctePrEsRhMTiQwz
+XRSN33RbxsQs25JVppkJWTQZ+sWZJWO4mBC2QwqceoXblk/35rn9//49z3nO
+8xyXFcCt9bIQ7cZEQ5ooE0cDCUkiDTt2RMUApg6fzw8EmfRglYok1CMit89j
+J50uE4AroBxVBewTfvxgx8nnoi4W2YPUENZ8D34bsLeN3d4A4EuLwz0kgHsd
+7ZvsQpAmoah5l0ww5xQVZxf3dfWHACwz4lAcmv1E27cYsM7f9sRz1n9ZDaAt
+HZY9hIkB7ZHtSB64P1EFYP3itGYcxComAm5CIZZGGOvulCXqcIeRRsSIW8JI
+9WNKZz/q0mn5ogvjO2VJ6XzyboG3tjHLD2DdssxkJQYFVVQ0vdXMZ7Wnvlpf
+YONWk40AZf0y5AHwjeVYNfQgKYo0rPPZePf0ve9v3Ldwn+yf/w1ui9W0A+he
+jk+TKncrWkOvgkhA53V996SdTm/I4V6mA+funv26uneZe5XwasaCrAb0CXyn
+bkSaiTv93Cycu/JV6JxyZbowtkFIwUZe/c6/Jk8cOublXpbf90klD0pZEVYs
+7gVZlQnhRGFvSxw3bFDUfw+0jttMz4cz4Rkd36Hhlkvx8gsVAL6SJo+KBriV
+laPe6R9yEIAgHVxQxBJL4mHJACm8YCu8kHsysmQXfBopzj79WEMBpCFjcsfg
+9tzPrZejANrTIS+0sM0GzNDBh32P/kF5aTIPqyI7iZIsRAyYN2v6J+K7PswG
+sHwJpoIlaa5fb06x4d+8/xZyvjxVnhZsSwqY6SPL6uC3VnNasMoUsHjryE+n
+hy7uTwtWlQL2ZPzxyDGn9CaAG1PCFja2ygD43fFROO7+9WhGwGoDYFvjvdGW
+W9eUjIBBA+DR14fRqn1lFUufvWeBKUboJ05UMZafX5fRfwwbAGuHCzeRP/or
+lxyTe6KarIqIdVsXu9IIIqPOXnI0WQtj1uyJJkZojGq4W9d5lfMFnev+vFzO
+rV77NNJyq6NvO4BrdmKVYGl+WDzdFHxT9GPz3uLBVq7kkXVJSupHhI0DVSf3
+ehWTxXx8L5fzSN6c3F4P2yFbV3Jj9/nrDlpLrwyWcCGPFM0Jk2foM87/FWWV
+TOMJMwfwyPySEyNLr3zxzP6zd9YeWcuVPLK6CQkS1jwkKOtUHQNnzu18z1qa
+1EAXImsSKpYiMYipZtx3V7w9Y5VHx4rZNa8Z08RP5pYKVKzIVGS5irHXxIjt
+onJyjfoKlcdtV/MnajhwPvI/I5QLEyI36zg=
+       "]]}, 
+   "ExternalEvaluateData" -> <|
+    "System" -> "Shell", "SessionID" -> "default-shell-session", "Evaluator" -> 
+     Automatic|>},
+ CellEvaluationLanguage->"Shell",
+ CellChangeTimes->{{3.98758679411267*^9, 3.987586794600952*^9}},
+ CellID->887729548,ExpressionUUID->"9efac460-8d74-4be0-84d5-1767cc1d9c1a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{172, Automatic}, {47, Automatic}},
+FrontEndVersion->"14.3 for Mac OS X ARM (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6811a74a-41d7-4f72-bdc6-d4c9d90f50ea"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ExampleNotebook"->{
+  Cell[576, 22, 1646, 33, 76, "Section",ExpressionUUID->"7fef9e64-1428-4429-be7f-d8c2c395b58d",
+   CellTags->{"ExampleNotebook", "Examples", "TemplateCellGroup"},
+   CellID->576412824]},
+ "Examples"->{
+  Cell[576, 22, 1646, 33, 76, "Section",ExpressionUUID->"7fef9e64-1428-4429-be7f-d8c2c395b58d",
+   CellTags->{"ExampleNotebook", "Examples", "TemplateCellGroup"},
+   CellID->576412824]},
+ "TemplateCellGroup"->{
+  Cell[576, 22, 1646, 33, 76, "Section",ExpressionUUID->"7fef9e64-1428-4429-be7f-d8c2c395b58d",
+   CellTags->{"ExampleNotebook", "Examples", "TemplateCellGroup"},
+   CellID->576412824],
+  Cell[2247, 59, 1945, 43, 61, "Subsection",ExpressionUUID->"604049c6-f943-450f-9ec0-7e87891d0d13",
+   CellTags->{"ExampleInitialization", "Initialization for Examples", "TemplateCellGroup"},
+   CellID->630358806]},
+ "ExampleInitialization"->{
+  Cell[2247, 59, 1945, 43, 61, "Subsection",ExpressionUUID->"604049c6-f943-450f-9ec0-7e87891d0d13",
+   CellTags->{"ExampleInitialization", "Initialization for Examples", "TemplateCellGroup"},
+   CellID->630358806]},
+ "Initialization for Examples"->{
+  Cell[2247, 59, 1945, 43, 61, "Subsection",ExpressionUUID->"604049c6-f943-450f-9ec0-7e87891d0d13",
+   CellTags->{"ExampleInitialization", "Initialization for Examples", "TemplateCellGroup"},
+   CellID->630358806]},
+ "DefaultContent"->{
+  Cell[4917, 129, 686, 17, 64, "Text",ExpressionUUID->"bd421ae9-bff1-440f-9f8f-c8c48339b10b",
+   CellTags->"DefaultContent",
+   CellID->489008670]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ExampleNotebook", 44198, 908},
+ {"Examples", 44400, 912},
+ {"TemplateCellGroup", 44611, 916},
+ {"ExampleInitialization", 45041, 923},
+ {"Initialization for Examples", 45291, 927},
+ {"DefaultContent", 45528, 931}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 1646, 33, 76, "Section",ExpressionUUID->"7fef9e64-1428-4429-be7f-d8c2c395b58d",
+ CellTags->{"ExampleNotebook", "Examples", "TemplateCellGroup"},
+ CellID->576412824],
+Cell[CellGroupData[{
+Cell[2247, 59, 1945, 43, 61, "Subsection",ExpressionUUID->"604049c6-f943-450f-9ec0-7e87891d0d13",
+ CellTags->{"ExampleInitialization", "Initialization for Examples", "TemplateCellGroup"},
+ CellID->630358806],
+Cell[4195, 104, 286, 7, 52, "Input",ExpressionUUID->"de48af04-c37a-42b2-848a-b8a4fc6333ac",
+ InitializationCell->True,
+ CellID->264453224],
+Cell[4484, 113, 263, 7, 52, "Input",ExpressionUUID->"59c7692e-39c5-475a-a592-a21e7bbe773a",
+ InitializationCell->True,
+ CellID->814364577]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4784, 125, 130, 2, 61, "Subsection",ExpressionUUID->"6e40844a-ec8f-421c-b30f-5157705241bd",
+ CellID->816121734],
+Cell[4917, 129, 686, 17, 64, "Text",ExpressionUUID->"bd421ae9-bff1-440f-9f8f-c8c48339b10b",
+ CellTags->"DefaultContent",
+ CellID->489008670],
+Cell[5606, 148, 4649, 84, 111, "ExternalLanguage",ExpressionUUID->"762afc58-c7b6-46c6-b0e9-bc88286b5ed2",
+ CellID->140766796],
+Cell[10258, 234, 193, 3, 38, "Text",ExpressionUUID->"471b3b7f-476c-4dba-8ef7-9b024e277819",
+ CellID->1941798359],
+Cell[10454, 239, 4821, 86, 148, "ExternalLanguage",ExpressionUUID->"46bdcb59-e8f6-4dba-b623-720ce109d40f",
+ CellID->1519540614],
+Cell[15278, 327, 403, 8, 64, "Text",ExpressionUUID->"25bfc620-a6f6-4719-a535-d11634a38308",
+ CellID->376389276],
+Cell[15684, 337, 4542, 79, 56, "ExternalLanguage",ExpressionUUID->"70ce9596-645b-4270-bf26-2c203c537a19",
+ CellID->493724997],
+Cell[20229, 418, 211, 3, 38, "Text",ExpressionUUID->"3259ece5-144f-4fdd-b640-f6c6792e59e6",
+ CellID->2068565705],
+Cell[20443, 423, 4539, 79, 56, "ExternalLanguage",ExpressionUUID->"d43efed2-95d7-4ca7-ace3-0d3790e08150",
+ CellID->2146116374]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25019, 507, 121, 2, 61, "Subsection",ExpressionUUID->"637f67c7-e527-4e72-94cf-c4a6ae5e0561",
+ CellID->189825519],
+Cell[CellGroupData[{
+Cell[25165, 513, 364, 5, 50, "Subsubsection",ExpressionUUID->"042263ee-fd75-4ed0-a787-06e69edd2f46",
+ CellID->462403203],
+Cell[25532, 520, 538, 11, 66, "Text",ExpressionUUID->"f49fff80-93b8-4a01-bf13-8bfa746ec61a",
+ CellID->1379475188],
+Cell[26073, 533, 254, 4, 33, "Input",ExpressionUUID->"c7f20117-a42c-4b9b-8c75-c6f0d0e7e510",
+ CellID->463853030],
+Cell[26330, 539, 1256, 30, 68, "Text",ExpressionUUID->"4bfb15f2-9776-4fbb-92aa-9266dca418f3",
+ CellID->48958861],
+Cell[27589, 571, 229, 4, 33, "Input",ExpressionUUID->"5e2439d8-b73c-4974-89e9-758e98eb3286",
+ CellID->1296780026]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27855, 580, 200, 3, 50, "Subsubsection",ExpressionUUID->"83f8a2c1-e5e5-40e8-a230-40854a784f83",
+ CellID->1689922512],
+Cell[28058, 585, 275, 6, 38, "Text",ExpressionUUID->"6c9f9374-84f1-4dec-950b-c02845411b06",
+ CellID->838399123],
+Cell[28336, 593, 4594, 82, 74, "ExternalLanguage",ExpressionUUID->"de813569-073c-40f7-a14e-ef96a3116c36",
+ CellID->1591289143]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32967, 680, 212, 3, 50, "Subsubsection",ExpressionUUID->"0dcb3e55-3a13-407a-bd23-492a21676833",
+ CellID->1323273837],
+Cell[33182, 685, 378, 8, 38, "Text",ExpressionUUID->"6056f329-21de-483f-9f37-85b83004690d",
+ CellID->12581532],
+Cell[33563, 695, 5236, 98, 389, "ExternalLanguage",ExpressionUUID->"214437c0-f582-452d-b8db-6e8c539b31a7",
+ CellID->1113094263],
+Cell[38802, 795, 215, 2, 38, "Text",ExpressionUUID->"1cf3a273-ed12-4cc4-8bed-fea3096a5a64",
+ CellID->297622367],
+Cell[39020, 799, 4788, 93, 278, "ExternalLanguage",ExpressionUUID->"9efac460-8d74-4be0-84d5-1767cc1d9c1a",
+ CellID->887729548]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
